@@ -22,19 +22,19 @@
         $rs = $pdo -> query("select * from user"); 
         
           while($row = $rs -> fetch()){
-            <tr>
-              <th>print(array_search("uid",$row));</th>
-              <th>print(array_search("name",$row));</th>
-              <th>print(array_search("password",$row));</th>
-              <th>print(array_search("gender",$row));</th>
-              <th>print(array_search("age",$row));</th>
-              <th>print(array_search("weight",$row));</th>
-              <th>print(array_search("height",$row));</th>
-              <th>print(array_search("bp",$row));</th>
-              <th>print(array_search("bsl",$row));</th>
-              <th>print(array_search("chol",$row));</th>
-              <th>print(array_search("token",$row));</th>
-            </tr>
+            print("<tr>");
+            print("<td>".array_search("uid",$row)."</td>");
+            print("<td>".array_search("name",$row)."</td>");
+            print("<td>".array_search("password",$row)."</td>");
+            print("<td>".array_search("gender",$row)."</td>");
+            print("<td>".array_search("age",$row)."</td>");
+            print("<td>".array_search("weight",$row)."</td>");
+            print("<td>".array_search("height",$row)."</td>");
+            print("<td>".array_search("bp",$row)."</td>");
+            print("<td>".array_search("bsl",$row)."</td>");
+            print("<td>".array_search("chol",$row)."</td>");
+            print("<td>".array_search("token",$row)."</td>");
+            print("</tr>");
           }
 
       }catch(PDOException $e){
