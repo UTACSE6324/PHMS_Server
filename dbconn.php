@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PHMS Server DataBase Conn Test</title>
+  <title>PHMS Server DataBase Conn Test</title>
+  <style type="text/css"> 
+    th {padding-left:4px; padding-right:4px;}
+    td {padding-left:4px; padding-right:4px;}
+  </style>
 </head>
 <body>
 
@@ -15,13 +19,11 @@
     </tr>
     
     <?php
-      header('content-type:text/html;charset=utf-8');
-
+    
       try{
         $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
         $rs = $pdo -> query("select * from user"); 
           while($row = $rs -> fetch()){
-            print_r($row);
             print("<tr>");
             for ($i= 0;$i< count($row); $i=$i+2){
               print("<td>".$row[$i]."</td>");
