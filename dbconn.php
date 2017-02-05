@@ -10,7 +10,7 @@
   <table border="1">
   
     <tr>
-      <th>uid</th><th>name</th><th>height</th><th>gender</th><th>age</th><th>weight</th>
+      <th>uid</th><th>name</th><th>gender</th><th>age</th><th>weight</th><th>height</th>
       <th>password</th><th>bp</th><th>bsl</th><th>chol</th><th>token</th>
     </tr>
     
