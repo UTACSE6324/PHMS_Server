@@ -8,7 +8,7 @@
 <?php
   header('content-type:text/html;charset=utf-8');
   
-   print_r("table user info:");
+  print_r("table user info:");
   
   try{
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
