@@ -21,19 +21,19 @@
         $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
         $rs = $pdo -> query("select * from user"); 
         
-          while($row = $rs -> fetch()){
+          for($num = 0; $row = $rs -> fetch(); $num++){
             print("<tr>");
-            print("<td>".array_column($row,"uid")."</td>");
-            print("<td>".array_column($row,"name")."</td>");
-            print("<td>".array_column($row,"password")."</td>");
-            print("<td>".array_column($row,"gender")."</td>");
-            print("<td>".array_column($row,"age")."</td>");
-            print("<td>".array_column($row,"weight")."</td>");
-            print("<td>".array_column($row,"height")."</td>");
-            print("<td>".array_column($row,"bp")."</td>");
-            print("<td>".array_column($row,"bsl")."</td>");
-            print("<td>".array_column($row,"chol")."</td>");
-            print("<td>".array_column($row,"token")."</td>");
+            print("<td>".array_column($row,"uid",$num)."</td>");
+            print("<td>".array_column($row,"name",$num)."</td>");
+            print("<td>".array_column($row,"password",$num)."</td>");
+            print("<td>".array_column($row,"gender",$num)."</td>");
+            print("<td>".array_column($row,"age",$num)."</td>");
+            print("<td>".array_column($row,"weight",$num)."</td>");
+            print("<td>".array_column($row,"height",$num)."</td>");
+            print("<td>".array_column($row,"bp",$num)."</td>");
+            print("<td>".array_column($row,"bsl",$num)."</td>");
+            print("<td>".array_column($row,"chol",$num)."</td>");
+            print("<td>".array_column($row,"token",$num)."</td>");
             print("</tr>");
           }
 
