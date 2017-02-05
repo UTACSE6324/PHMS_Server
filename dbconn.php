@@ -23,17 +23,17 @@
         
           while($row = $rs -> fetch()){
             print("<tr>");
-            print("<td>".array_search("uid",$row)."</td>");
-            print("<td>".array_search("name",$row)."</td>");
-            print("<td>".array_search("password",$row)."</td>");
-            print("<td>".array_search("gender",$row)."</td>");
-            print("<td>".array_search("age",$row)."</td>");
-            print("<td>".array_search("weight",$row)."</td>");
-            print("<td>".array_search("height",$row)."</td>");
-            print("<td>".array_search("bp",$row)."</td>");
-            print("<td>".array_search("bsl",$row)."</td>");
-            print("<td>".array_search("chol",$row)."</td>");
-            print("<td>".array_search("token",$row)."</td>");
+            print("<td>".array_column($row,"uid")."</td>");
+            print("<td>".array_column($row,"name")."</td>");
+            print("<td>".array_column($row,"password")."</td>");
+            print("<td>".array_column($row,"gender")."</td>");
+            print("<td>".array_column($row,"age")."</td>");
+            print("<td>".array_column($row,"weight")."</td>");
+            print("<td>".array_column($row,"height")."</td>");
+            print("<td>".array_column($row,"bp")."</td>");
+            print("<td>".array_column($row,"bsl")."</td>");
+            print("<td>".array_column($row,"chol")."</td>");
+            print("<td>".array_column($row,"token")."</td>");
             print("</tr>");
           }
 
