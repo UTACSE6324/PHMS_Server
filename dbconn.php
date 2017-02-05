@@ -14,20 +14,30 @@
   <table border="1">
   
     <tr>
-      <th>uid</th><th>name</th><th>gender</th><th>age</th><th>weight</th><th>height</th>
-      <th>password</th><th>bp</th><th>bsl</th><th>chol</th><th>token</th>
+      <th>uid</th><th>name</th><th>password</th><th>gender</th><th>age</th>
+      <th>weight</th><th>height</th><th>bp</th><th>bsl</th><th>chol</th><th>token</th>
     </tr>
     
     <?php
+    
+      header('content-type:text/html;charset=utf-8');
     
       try{
         $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
         $rs = $pdo -> query("select * from user"); 
           while($row = $rs -> fetch()){
             print("<tr>");
-            for ($i= 0;$i< count($row); $i=$i+2){
-              print("<td>".$row[$i]."</td>");
-            }
+            print("<td>".$row['uid']."</td>");
+            print("<td>".$row['name']."</td>");
+            print("<td>".$row['password']."</td>");
+            print("<td>".$row['gender']."</td>");
+            print("<td>".$row['age']."</td>");
+            print("<td>".$row['weight']."</td>");
+            print("<td>".$row['height']."</td>");
+            print("<td>".$row['bp']."</td>");
+            print("<td>".$row['bsl']."</td>");
+            print("<td>".$row['chol']."</td>");
+            print("<td>".$row['token']."</td>");
             print("</tr>");
           }
 
