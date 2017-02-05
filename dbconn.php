@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHMS Server DataBase Conn Test</title>
+</head>
+<body>
+
 <?php
   header('content-type:text/html;charset=utf-8');
 
@@ -10,3 +17,5 @@
   
   print("database connected!");
 ?>
+</body>
+</html>
