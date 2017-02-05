@@ -23,7 +23,7 @@
           while($row = $rs -> fetch()){
             print_r($row);
             print("<tr>");
-            for ($i= 0;$i< count($row); $i++){
+            for ($i= 0;$i< count($row); $i=$i+2){
               print("<td>".$row[$i]."</td>");
             }
             print("</tr>");
