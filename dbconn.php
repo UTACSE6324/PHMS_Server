@@ -20,8 +20,8 @@
       try{
         $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
         $rs = $pdo -> query("select * from user"); 
-          print_r($rs);
           while($row = $rs -> fetch()){
+            print_r($row);
             print("<tr>");
             for ($i= 0;$i< count($row); $i++){
               print("<td>".$row[$i]."</td>");
