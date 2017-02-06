@@ -4,6 +4,8 @@
   $name = $_POST['username'];
   $password = $_POST['password'];
 
+  echo($name." ".$password);
+
   if($name == ''){
     header("Status-Code:-1");
     header("summary:Username cannot be empty");
