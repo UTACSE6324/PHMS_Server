@@ -23,9 +23,11 @@
     
     $rs = $pdo -> query("select * from user where name = ".$name.";"); 
     
+    echo($rs);
+    
     if(sizeof($rs) > 0){
         echo("if31");
-      
+        
         header("Status-Code:-1");
         header("summary:Username exists");
       
