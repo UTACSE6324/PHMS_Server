@@ -1,8 +1,8 @@
 <?php
   header('content-type:text/html;charset=utf-8');
 
-  $name = $_POST['username'];
-  $password = $_POST['password'];
+  $name = $_GET['username'];
+  $password = $_GET['password'];
 
   echo($name." ".$password);
 
