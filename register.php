@@ -7,12 +7,18 @@
   echo($name." ".$password);
 
   if($name == ''){
+    echo("if1");
+    
     header("Status-Code:-1");
     header("summary:Username cannot be empty");
   }else if(strlen($password) < 8){
+    echo("if2");
+    
     header("Status-Code:-1");
     header("summary:Password is too short");
   }else{
+    echo("if3");
+    
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');   
     
     $rs = $pdo -> query("select * from user where name = ".$name.";"); 
