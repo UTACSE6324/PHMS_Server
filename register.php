@@ -21,14 +21,14 @@
         header("Status-Code:1");
         header("summary:Success");
       
-        $rs = $pdo -> exec("insert into user (name,password) values (".$name.",".$password.");");
+        $ins = $pdo -> exec("insert into user (name,password) values (".$name.",".$password.");");
         
-        echo($rs);
+        echo($ins);
       
-        $rs = $pdo -> query("select * from user where name = ".$name.";"); 
+        $res = $pdo -> query("select * from user where name = ".$name.";"); 
       
         //$strr = json_encode($rs);  
-        echo($rs);
+        echo($res);
     }
   }
 
