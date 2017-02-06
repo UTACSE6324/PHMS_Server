@@ -11,7 +11,7 @@
     header("Status-Code:-1");
     header("summary:Password is too short");
   }else{
-    $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');   
+    $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358',array(PDO::ATTR_PERSISTENT => true));   
     $rs = $pdo -> query("select * from user where name = ".$name.";"); 
     
     if($rs != null){
