@@ -24,17 +24,29 @@
     $rs = $pdo -> query("select * from user where name = ".$name.";"); 
     
     if(sizeof($rs) > 0){
+        echo("if31");
+      
         header("Status-Code:-1");
         header("summary:Username exists");
+      
+        echo("if31");
     }else{
+        echo("if32");
+      
         header("Status-Code:1");
         header("summary:Success");
+      
+        echo("if32");
       
         $pdo -> exec("insert into user (name,password) values (".$name.",".$password.");");
         $rs = $pdo -> query("select * from user where name = ".$name.";"); 
       
+        echo("if32");
+      
         $strr = json_encode($rs);  
         echo($strr);
+      
+        echo("if32");
     }
   }
 
