@@ -14,13 +14,12 @@
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358',array(PDO::ATTR_PERSISTENT => true));   
     
     $ins = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
-    echo($ins);
     
     if($ins == 1){
         header("Status-Code:1");
         header("summary:Success");
       
-        $res = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
+        $res = $pdo -> exec("select * from user where name = '".$name."';");
         
         echo($res);
     }else{
