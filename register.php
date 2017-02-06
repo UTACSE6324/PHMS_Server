@@ -14,7 +14,7 @@
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');   
     $rs = $pdo -> query("select * from user where name = ".$name.";"); 
     
-    if($rs == null){
+    if($rs != null){
         header("Status-Code:-1");
         header("summary:Username exists");
     }else{
@@ -29,5 +29,4 @@
     }
   }
 
-  echo("result");
 ?>
