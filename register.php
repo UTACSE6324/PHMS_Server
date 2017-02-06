@@ -28,7 +28,8 @@
         $strr = json_encode($rs);  
         echo($strr);
     }
-   
   }
+
+  echo("result");
 
 ?>
