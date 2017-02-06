@@ -19,9 +19,9 @@
         header("Status-Code:1");
         header("summary:Success");
       
-        $res = $pdo -> exec("select * from user where name = '".$name."';");
+        $res = $pdo -> query("select * from user where name = '".$name."';");
         
-        echo($res);
+        print($res);
     }else{
         header("Status-Code:-1");
         header("summary:Username exists");
