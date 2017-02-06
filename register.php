@@ -1,6 +1,5 @@
 <?php
   header('content-type:text/html;charset=utf-8');
-  echo("result");
 
   $name = $_POST['username'];
   $password = $_POST['password'];
