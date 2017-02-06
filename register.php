@@ -20,7 +20,7 @@
       header("summary:Success");
 
       $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
-      $res = $pdo -> query("select * from user where name = '".$name."';");
+      $res = $pdo -> query("select * from user");
 
       print($res);
     }else{
