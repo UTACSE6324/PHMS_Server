@@ -23,7 +23,7 @@
     
     $rs = $pdo -> query("select * from user where name = ".$name.";"); 
     
-    echo($rs);
+    echo($rs==null);
     
     if(sizeof($rs) > 0){
         echo("if31");
