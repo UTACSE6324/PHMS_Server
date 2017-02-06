@@ -15,23 +15,18 @@
     
     $ins = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
     echo($ins);
-    /*
-    if($rs != null){
-        header("Status-Code:-1");
-        header("summary:Username exists");
-    }else{
+    
+    if($ins == 1){
         header("Status-Code:1");
         header("summary:Success");
       
-        $ins = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
+        $res = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
         
-        echo($ins);
-      
-        $res = $pdo -> query("select * from user where name = '".$name."';"); 
-      
-        //$strr = json_encode($rs);  
         echo($res);
-    }*/
+    }else{
+        header("Status-Code:-1");
+        header("summary:Username exists");
+    }
     
     $pdo = null;
   }
