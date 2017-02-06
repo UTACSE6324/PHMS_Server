@@ -12,10 +12,11 @@
     header("summary:Password is too short");
   }else{
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358',array(PDO::ATTR_PERSISTENT => true));   
-    $rs = $pdo -> query("select * from user where name = ".$name.";"); 
-    echo("1".$rs);
+    
     $rs = $pdo -> query("select * from user;"); 
     echo("2".$rs);
+    $rs = $pdo -> query("select * from user where name = ".$name.";"); 
+    echo("1".$rs);
     
     if($rs != null){
         header("Status-Code:-1");
@@ -24,7 +25,7 @@
         header("Status-Code:1");
         header("summary:Success");
       
-        $ins = $pdo -> exec("insert into user (name,password) values (".$name.",".$password.");");
+        $ins = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
         
         echo($ins);
       
