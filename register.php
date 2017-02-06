@@ -25,7 +25,7 @@
         
         echo($ins);
       
-        $res = $pdo -> query("select * from user where name = ".$name.";"); 
+        $res = $pdo -> query("select * from user where name = '".$name."';"); 
       
         //$strr = json_encode($rs);  
         echo($res);
