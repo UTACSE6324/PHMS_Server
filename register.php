@@ -4,6 +4,7 @@
   $name = $_GET['name'];
   $password = $_GET['password'];
   $token = $name.time();
+  $arr = "";
 
   if($name == ''){
     
@@ -26,8 +27,13 @@
       
       $res = $pdo -> query("select * from user where name = '".$name."';") -> fetch();
      
-      print json_encode($res);
-      
+      $arr = array(
+        'uid' => $res['uid'],
+        'name' => $res['name'],
+        'password' => $res['password'],
+        'token' => $res['token']
+      );
+  
     }else{
       header("Status-Code:-1");
       header("summary:Username exists");
@@ -35,4 +41,5 @@
     
   }
 
+  echo json_encode($arr);
 ?>
