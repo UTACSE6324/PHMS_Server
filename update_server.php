@@ -1,3 +1,4 @@
 <?php
-  print passthru('cd /var/www/html/  git pull origin master');
+  passthru("ls");
+  //passthru('cd /var/www/html/  git pull origin master');
 ?>
