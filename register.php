@@ -1,11 +1,8 @@
 <?php
   header('content-type:text/html;charset=utf-8');
 
-  $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
-  $ins = $pdo -> exec("insert into user (name,password,token) values ('a','a','a');");
-
-  $name = $_GET['name'];
-  $password = $_GET['password'];
+  $name = $_POST['name'];
+  $password = $_POST['password'];
   $token = $name.time();
   $arr = "";
 
