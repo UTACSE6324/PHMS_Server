@@ -55,7 +55,11 @@
   //still in progress
   
   <br>
-  table mecication info:<br><br>
+  table medication info:<br><br>
+  //still in progress
+  
+  <br>
+  table note info:<br><br>
   //still in progress
   
 </body>
