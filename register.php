@@ -1,8 +1,8 @@
 <?php
   header('content-type:text/html;charset=utf-8');
 
-  $name = $_POST['name'];
-  $password = $_POST['password'];
+  $name = $_GET['name'];
+  $password = $_GET['password'];
   $token = $name.time();
   $arr = "";
 
