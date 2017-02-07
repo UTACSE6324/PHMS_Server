@@ -11,15 +11,15 @@
     header("Status-Code:-1");
     header("summary:Password is too short");
   }else{
-    $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');   
+    $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));   
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $ins = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
     
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
-
-      $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
+      
       $res = $pdo -> query("select * from user");
 
       print($res);
