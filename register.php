@@ -20,6 +20,9 @@
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     
     $ins = $pdo -> query("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
+    $res = $pdo -> query("select * from user");
+
+    print($res);
     
     if($ins == 1){
       header("Status-Code:1");
