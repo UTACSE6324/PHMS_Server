@@ -33,6 +33,8 @@
         'token' => $res['token']
       );
       
+      echo json_encode($res);
+      echo(" ");
       echo json_encode($arr);
       
     }else{
