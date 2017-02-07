@@ -1,3 +1,3 @@
 <?php
-  passthru('cd /var/www/html/&&git pull');
+  passthru('cd /var/www/html/ && git pull');
 ?>
