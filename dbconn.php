@@ -50,15 +50,15 @@
   
   </table>
   
-  <br>
+  <br><br>
   table diet info:<br><br>
   //still in progress
   
-  <br>
+  <br><br>
   table medication info:<br><br>
   //still in progress
   
-  <br>
+  <br><br>
   table note info:<br><br>
   //still in progress
   
