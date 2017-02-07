@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  table user info:<br><br>
+  <h>table user info:</h>
   
   <table border="1">
   
@@ -50,16 +50,13 @@
   
   </table>
   
-  <br><br>
-  table diet info:<br><br>
+  <h>table diet info:</h>
   //still in progress
   
-  <br><br>
-  table medication info:<br><br>
+  <h>table medication info:</h>
   //still in progress
   
-  <br><br>
-  table note info:<br><br>
+  <h>table note info:</h>
   //still in progress
   
 </body>
