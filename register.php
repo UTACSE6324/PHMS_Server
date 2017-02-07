@@ -6,16 +6,20 @@
   $token = $name.time();
 
   if($name == ''){
+    
     header("Status-Code:-1");
     header("summary:Username cannot be empty");
+    
   }else if(strlen($password) < 8){
+    
     header("Status-Code:-1");
     header("summary:Password is too short");
-  }else{
-    $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));   
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $ins = $pdo -> exec("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
+  }else{
+    
+    $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
+    
+    $ins = $pdo -> query("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
     
     if($ins == 1){
       header("Status-Code:1");
@@ -28,6 +32,7 @@
       header("Status-Code:-1");
       header("summary:Username exists");
     }
+    
   }
 
 ?>
