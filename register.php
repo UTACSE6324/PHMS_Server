@@ -3,6 +3,7 @@
 
   $name = $_GET['username'];
   $password = $_GET['password'];
+  $token = $name.time();
 
   if($name == ''){
     header("Status-Code:-1");
@@ -14,7 +15,7 @@
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358',array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));   
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $ins = $pdo -> exec("insert into user (name,password) values ('".$name."','".$password."');");
+    $ins = $pdo -> exec("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
     
     if($ins == 1){
       header("Status-Code:1");
