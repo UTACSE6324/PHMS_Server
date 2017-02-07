@@ -20,8 +20,9 @@
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     
     $rs = $pdo -> query("select * from user"); 
-    echo(" 2");
-    echo($rs);
+    while($row = $rs -> fetch()){
+            print($row);
+    }
     
     $ins = $pdo -> query("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
     
