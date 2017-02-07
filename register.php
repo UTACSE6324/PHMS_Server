@@ -24,7 +24,7 @@
       header("Status-Code:1");
       header("summary:Success");
       
-      $res = $pdo -> query("select * from user where name = '".$name."';");
+      $res = $pdo -> query("select * from user;");
       while($row = $res -> fetch()){
          print_r($row);
       }
