@@ -24,22 +24,10 @@
       header("Status-Code:1");
       header("summary:Success");
       
-      $res = $pdo -> query("select * from user;");
+      $res = $pdo -> query("select * from user");
       while($row = $res -> fetch()){
-         print_r($row);
+         print($row);
       }
-      /*
-      $arr = array(
-        'uid' => $res['uid'],
-        'name' => $res['name'],
-        'password' => $res['password'],
-        'token' => $res['token']
-      );
-      
-      echo json_encode($res);
-      echo(" ");
-      echo json_encode($arr);
-      */
       
     }else{
       header("Status-Code:-1");
