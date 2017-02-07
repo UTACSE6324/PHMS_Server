@@ -1,7 +1,7 @@
 <?php
   header('content-type:text/html;charset=utf-8');
 
-  $name = $_GET['username'];
+  $name = $_GET['name'];
   $password = $_GET['password'];
   $token = $name.time();
 
@@ -18,22 +18,23 @@
   }else{
     
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
-    
-    $rs = $pdo -> query("select * from user"); 
-    while($row = $rs -> fetch()){
-            print($row);
-    }
-    
-    $ins = $pdo -> query("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
+    $ins = $pdo -> exec("insert into user (name,password,token) values ('".$name."','".$password."','".$token."');");
     
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
       
-      echo(" 1");
+      $res = $pdo -> query("select * from user where name = '".$name."';") -> fetch();
       
-      $res = $pdo -> query("select * from user");
-      print($res);
+      $arr = array(
+        'uid' => $res['uid'],
+        'name' => $res['name'],
+        'password' => $res['password'],
+        'token' => $res['token']
+      );
+      
+      echo json_encode($arr);
+      
     }else{
       header("Status-Code:-1");
       header("summary:Username exists");
