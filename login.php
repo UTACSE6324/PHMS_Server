@@ -11,8 +11,8 @@
   $res = $pdo -> query("select * from user where email = '$email' and password = '$password';") -> fetch();
 
   if(!empty($res)){
-    header("Status-Code:1");
-    header("summary:Success");
+    //header("Status-Code:1");
+    //header("summary:Success");
     
     $arr = array(
       'uid' => $res['uid'],
@@ -32,8 +32,8 @@
     $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
     
   }else{
-    header("Status-Code:-1");
-    header("summary:Login fail");
+    //header("Status-Code:-1");
+    //header("summary:Login fail");
   }
   
   echo json_encode($arr);
