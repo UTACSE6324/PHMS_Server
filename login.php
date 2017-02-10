@@ -1,7 +1,7 @@
 <?php
   header('content-type:text/html;charset=utf-8');
   
-  $email = $_GET['email']
+  $email = $_GET['email'];
   $password = $_GET['password'];
   $token = $name.time();
 
