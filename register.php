@@ -21,6 +21,7 @@
     header("summary:Password is too short");
     
   }else{
+    echo("start database");
     
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values 
