@@ -11,12 +11,6 @@
   $token = $name.time();
   $arr = "";
 
-  print($email);
-  print($password);
-  print($name);
-  print($sq);
-  print($sqanswer);
-
   if($email == ''||$name == ''||$password == ''||$sq == ''||$sqanswer == ''){
     
     header("Status-Code:-1");
@@ -28,14 +22,10 @@
     header("summary:Password is too short");
     
   }else{
-    print("start database");
-    print("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
-    
+  
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
-    
-    print($ins);
-    
+  
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
@@ -59,6 +49,6 @@
     
   }
 
-  print json_encode($arr);
+  echo json_encode($arr);
 
 ?>
