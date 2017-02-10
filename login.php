@@ -8,7 +8,7 @@
   $arr = "";
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
-  $res = $pdo -> query("select * from user where email = '$email' and password = '$password';") -> fetch();
+  $res = $pdo -> query("select * from user;") -> fetch();
   
   print_r($res);
 
@@ -38,5 +38,5 @@
     header("summary:Login fail");
   }
   
-  //echo json_encode($arr);
+  echo json_encode($arr);
 ?>
