@@ -1,6 +1,7 @@
 <?php
   header('content-type:text/html;charset=utf-8');
   print('start');
+/*
   $email = $_GET['email']
   $name = $_GET['name'];
   $password = $_GET['password'];
@@ -49,7 +50,7 @@
         'sq' => $res['sq'],
         'sqanswer' => $res['sqanswer'],
         'token' => $res['token']
-      );*/
+      );
   
     }else{
       header("Status-Code:-1");
@@ -59,4 +60,5 @@
   }
 
   print json_encode($arr);
+*/
 ?>
