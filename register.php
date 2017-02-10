@@ -2,12 +2,12 @@
   header('content-type:text/html;charset=utf-8');
   print('start');
 
-  $email = $_GET['email']
+  $email = $_GET['email'];
   $name = $_GET['name'];
   $password = $_GET['password'];
   $sq = $_GET['sq'];
   $sqanswer = $_GET['sqanswer'];
-/*
+
   $token = $name.time();
   $arr = "";
 
@@ -30,7 +30,7 @@
   }else{
     print("start database");
     print("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
-    /*
+    
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
     
@@ -60,5 +60,5 @@
   }
 
   print json_encode($arr);
-*/
+
 ?>
