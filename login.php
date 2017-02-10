@@ -10,6 +10,34 @@
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where email = '$email' and password = '$password';") -> fetch();
 
+  if($res['gender'] == null){
+    $res['gender'] = '';
+  }
+
+  if($res['age'] == null){
+    $res['age'] = '';
+  }
+
+  if($res['weight'] == null){
+    $res['weight'] = '';
+  }
+
+  if($res['height'] == null){
+    $res['height'] = '';
+  }
+
+  if($res['bp'] == null){
+    $res['bp'] = '';
+  }
+
+  if($res['bsl'] == null){
+    $res['bsl'] = '';
+  }
+
+  if($res['chol'] == null){
+    $res['chol'] = '';
+  }
+
   if(strlen($res) > 0){
     header("Status-Code:1");
     header("summary:Success");
@@ -29,7 +57,7 @@
       'chol' => $res['chol']
     );
     
-    //$ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
+    $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
     
   }else{
     header("Status-Code:-1");
