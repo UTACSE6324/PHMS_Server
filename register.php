@@ -29,7 +29,7 @@
   }else{
     print("start database");
     print("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
-    
+    /*
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
     
@@ -49,7 +49,7 @@
         'sq' => $res['sq'],
         'sqanswer' => $res['sqanswer'],
         'token' => $res['token']
-      );
+      );*/
   
     }else{
       header("Status-Code:-1");
