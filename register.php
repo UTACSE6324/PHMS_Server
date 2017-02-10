@@ -10,6 +10,12 @@
   $token = $name.time();
   $arr = "";
 
+  echo($email);
+  echo($password);
+  echo($name);
+  echo($sq);
+  echo($sqanswer);
+
   if($email == ''||$name == ''||$password == ''||$sq == ''||$sqanswer == ''){
     
     header("Status-Code:-1");
