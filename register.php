@@ -10,11 +10,11 @@
   $token = $name.time();
   $arr = "";
 
-  echo($email);
-  echo($password);
-  echo($name);
-  echo($sq);
-  echo($sqanswer);
+  print($email);
+  print($password);
+  print($name);
+  print($sq);
+  print($sqanswer);
 
   if($email == ''||$name == ''||$password == ''||$sq == ''||$sqanswer == ''){
     
@@ -27,13 +27,13 @@
     header("summary:Password is too short");
     
   }else{
-    echo("start database");
-    echo("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
+    print("start database");
+    print("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
     
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
     $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
     
-    echo($ins);
+    print($ins);
     
     if($ins == 1){
       header("Status-Code:1");
@@ -58,5 +58,5 @@
     
   }
 
-  echo json_encode($arr);
+  print json_encode($arr);
 ?>
