@@ -22,12 +22,10 @@
     
   }else{
     echo("start database");
-    echo("insert into user (email,name,password,sq,sqanswer,token) values 
-                          ('$email','$name','$password','$sq','$sqanswer','$token');");
+    echo("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
     
     $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
-    $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values 
-                          ('$email','$name','$password','$sq','$sqanswer','$token');");
+    $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values ('$email','$name','$password','$sq','$sqanswer','$token');");
     
     echo($ins);
     
