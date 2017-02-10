@@ -19,11 +19,17 @@
       'email' => $res['email'],
       'name' => $res['name'],
       'password' => $res['password'],
-      'token' => $token
-      
+      'token' => $token,
+      'gender' => $res['gender'],
+      'age' => $res['age'],
+      'weight' => $res['weight'],
+      'height' => $res['height'],
+      'bp' => $res['bp'],
+      'bsl' => $res['bsl'],
+      'chol' => $res['chol']
     );
     
-    $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
+    //$ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
     
   }else{
     header("Status-Code:-1");
