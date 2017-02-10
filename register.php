@@ -7,7 +7,7 @@
   $sq = $_GET['sq'];
   $sqanswer = $_GET['sqanswer'];
 
-  $token = $name.time();
+  $token = time();
   $arr = "";
 
   if($email == ''||$name == ''||$password == ''||$sq == ''||$sqanswer == ''){
