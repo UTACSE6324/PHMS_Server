@@ -10,9 +10,9 @@
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where email = '$email' and password = '$password';") -> fetch();
 
-  print(strlen($res));
+  print(empty($arr));
 
-  if(strlen($res) > 0){
+  if(!empty($arr)){
     header("Status-Code:1");
     header("summary:Success");
     
