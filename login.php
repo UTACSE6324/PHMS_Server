@@ -11,6 +11,9 @@
   $res = $pdo -> query("select * from user where email = '$email';") -> fetch();
   
   if(strlen($res) > 0 && $res['password']==$password){
+    header("Status-Code:1");
+    header("summary:Success");
+    
     $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
     
     $arr = array(
