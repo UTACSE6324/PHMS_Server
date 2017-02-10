@@ -24,7 +24,7 @@
       'email' => $res['email'],
       'name' => $res['name'],
       'password' => $res['password'],
-      'token' => $res['token'],
+      'token' => $token,
       'gender' => $res['gender'],
       'age' => $res['age'],
       'weight' => $res['weight'],
