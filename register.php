@@ -26,6 +26,8 @@
     $ins = $pdo -> exec("insert into user (email,name,password,sq,sqanswer,token) values 
                           ('$email','$name','$password','$sq','$sqanswer','$token');");
     
+    echo($ins);
+    
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
