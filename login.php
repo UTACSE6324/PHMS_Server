@@ -38,5 +38,5 @@
     header("summary:Login fail");
   }
   
-  echo json_encode($arr);
+  //echo json_encode($arr);
 ?>
