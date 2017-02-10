@@ -5,6 +5,10 @@
   $password = $_GET['password'];
   $token = time();
 
+print_r($email);
+print_r($password);
+print_r($token);
+
   $arr = "";
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
