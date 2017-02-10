@@ -19,7 +19,7 @@
       'email' => $res['email'],
       'name' => $res['name'],
       'password' => $res['password'],
-      'token' => $token,
+      'token' => $token
       
     );
     
