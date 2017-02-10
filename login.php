@@ -3,7 +3,7 @@
   
   $email = $_GET['email'];
   $password = $_GET['password'];
-  $token = $name.time();
+  $token = time();
 
   $arr = "";
   
