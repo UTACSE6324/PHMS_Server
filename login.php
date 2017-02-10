@@ -11,7 +11,7 @@
   $res = $pdo -> query("select * from user where email = '$email' and password = '$password';") -> fetch();
 
   print('aaaaa/n');
-  print($res);
+  print json_encode($res);
 
   if(strlen($res) > 0){
     header("Status-Code:1");
