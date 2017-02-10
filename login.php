@@ -5,16 +5,10 @@
   $password = $_GET['password'];
   $token = time();
 
-print_r($email);
-print_r($password);
-print_r($token);
-
   $arr = "";
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where email = '$email';") -> fetch();
-  
-  print_r($res);
 
   if(strlen($res) > 0){
     header("Status-Code:1");
