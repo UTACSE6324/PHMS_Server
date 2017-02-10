@@ -8,7 +8,7 @@
   $arr = "";
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
-  $res = $pdo -> query("select * from user;") -> fetch();
+  $res = $pdo -> query("select * from user where email = '$email';") -> fetch();
 
   print('aaaaa/n');
   print($res);
