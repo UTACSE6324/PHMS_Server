@@ -26,14 +26,14 @@
       header("summary:Success");
       
       $arr = array(
-        'uid' => $res['uid'],
-        'age' => $res['age'],
-        'gender' => $res['gender'],
-        'weight' => $res['weight'],
-        'height' => $res['height'],
-        'bp' => $res['bp'],
-        'bsl' => $res['bsl'],
-        'chol' => $res['chol']
+        'uid' => $uid,
+        'age' => $age,
+        'gender' => $gender,
+        'weight' => $weight,
+        'height' => $height,
+        'bp' => $bp,
+        'bsl' => $bsl,
+        'chol' => $chol
       );
       
     }else{
