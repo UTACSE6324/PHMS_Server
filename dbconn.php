@@ -51,30 +51,31 @@
   </table>
   
   <h1>table contact info:</h1>
-   <table border="1">
-  
+  <table border="1">
     <tr>
       <th>uid</th><th>email</th><th>name</th><th>phone</th>
     </tr>
-  <?php
-      try{
-        $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
-        $rs = $pdo -> query("select * from contact"); 
-          while($row = $rs -> fetch()){
-            print("<tr>");
-            print("<td>".$row['uid']."</td>");
-            print("<td>".$row['name']."</td>");
-            print("<td>".$row['email']."</td>");
-            print("<td>".$row['phone']."</td>");
-            print("</tr>");
-          }
+    
+    <?php
+        try{
+          $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358');
+          $rs = $pdo -> query("select * from contact"); 
+            while($row = $rs -> fetch()){
+              print("<tr>");
+              print("<td>".$row['uid']."</td>");
+              print("<td>".$row['name']."</td>");
+              print("<td>".$row['email']."</td>");
+              print("<td>".$row['phone']."</td>");
+              print("</tr>");
+            }
 
-      }catch(PDOException $e){
-        print "ERROR!:".$e->getMessage()."</br>";
-        die();
-      }
+        }catch(PDOException $e){
+          print "ERROR!:".$e->getMessage()."</br>";
+          die();
+        }
 
-    ?>
+      ?>
+    
   </table>
   
   <h1>table diet info:</h1>
