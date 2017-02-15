@@ -17,7 +17,9 @@
       header("summary:Success");
       
       $num = count($ins);
-			for ($i = 0; $i < $num; ++$i) {
+      echo($num);
+      echo json_encode($ins);
+      for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
           push_array($arr,
             array(
