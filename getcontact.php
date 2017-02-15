@@ -7,12 +7,12 @@
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
-echo json_encode($res);
+
   if(!empty($res)){
-      header("Status-Code:1");
-      header("summary:Success");
-    $ins = $pdo -> query("select * from contact where uid = '$uid';") -> fetch();
-     echo json_encode($ins);
+    header("Status-Code:1");
+    header("summary:Success");
+    $ins = $pdo -> query("select * from contact where uid = '$uid';");
+  
     if(!empty($ins)){
       
       $num = count($ins);
