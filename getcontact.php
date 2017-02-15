@@ -11,7 +11,7 @@
   if(!empty($res)){
     header("Status-Code:1");
     header("summary:Success");
-    $ins = $pdo -> query("select * from contact where uid = '$uid';");
+    $ins = $pdo -> query("select * from contact where uid = '$uid';") -> fetch();
     echo json_encode($ins);
     if(!empty($ins)){
       $num = count($ins);
