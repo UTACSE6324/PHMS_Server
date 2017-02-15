@@ -28,7 +28,7 @@
   }else{
     header("Status-Code:-1");
     header("summary:Token out of date");
-    $arr = "Fail";
+    $arr = "Token out of date";
   }
   
   echo json_encode($arr);
