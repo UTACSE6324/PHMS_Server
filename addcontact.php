@@ -14,9 +14,7 @@
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   
   if(!empty($res)){
-    $ins = $pdo -> exec("insert into contact (uid, email, name, phone) values ('$uid','$name','$phone','$email');");
-    
-    echo ($uid.$name.$email.$phone);
+    $ins = $pdo -> exec("insert into contact (uid, name, phone, email) values ('$uid','$name','$phone','$email');");
     
     if($ins == 1){
       header("Status-Code:1");
