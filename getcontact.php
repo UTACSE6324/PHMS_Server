@@ -12,11 +12,9 @@
     header("Status-Code:1");
     header("summary:Success");
     $ins = $pdo -> query("select * from contact where uid = '$uid';");
-  
+    echo json_encode($ins);
     if(!empty($ins)){
-      
       $num = count($ins);
-      echo json_encode($num);
       
       for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
