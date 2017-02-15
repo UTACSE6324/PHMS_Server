@@ -9,7 +9,7 @@
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
 
   if(!empty($res)){
-    $ins = $pdo -> query("select * from contact where uid = '$uid';") -> fetch();
+    $ins = $pdo -> exec("select * from contact where uid = '$uid';") -> fetch();
      echo json_encode($ins);
     if(!empty($ins)){
       header("Status-Code:1");
