@@ -5,13 +5,13 @@
   $token = $_GET['token'];
   
   $arr = array();
-  
+  echo ("aa");
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
-  
+  echo ("aa");
   if(!empty($res)){
     $ins = $pdo -> query("select * from contact where uid = '$uid';") -> fetch();
-    
+    echo ("aa");
     if(!empty($ins)){
       header("Status-Code:1");
       header("summary:Success");
@@ -35,6 +35,7 @@
       header("summary:Insert invalid");
     }
   }else{
+    echo ("bb");
     header("Status-Code:-1");
     header("summary:Token out of date");
   }
