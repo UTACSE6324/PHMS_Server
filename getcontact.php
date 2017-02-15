@@ -15,10 +15,11 @@
     
     if(!empty($ins)){
       $num = count($ins);
-    
+     echo json_encode($ins);
+       echo json_encode($num);
       for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
-          echo json_encode($col);
+         
           push_array($arr,
             array(
               "name" => $col['name'],
