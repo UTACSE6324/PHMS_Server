@@ -16,7 +16,7 @@ echo json_encode($res);
     if(!empty($ins)){
       
       $num = count($ins);
-      echo json_encode($res);
+      echo json_encode($num);
       
       for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
