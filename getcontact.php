@@ -18,8 +18,8 @@
    
       for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
-           echo json_encode($col);
-          push_array($arr,
+          
+          array_push($arr,
             array(
               "name" => $col['name'],
               "phone" => $col['phone'],
