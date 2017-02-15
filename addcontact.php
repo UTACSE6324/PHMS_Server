@@ -16,6 +16,8 @@
   if(!empty($res)){
     $ins = $pdo -> exec("insert into contact (uid, email, name, phone) values ('$uid','$name','$phone','$email');");
     
+    echo ($uid.$name.$email.$phone);
+    
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
