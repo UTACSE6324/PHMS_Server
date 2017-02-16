@@ -8,7 +8,6 @@
   $sqanswer = $_GET['sqanswer'];
 
   $token = time();
-  $arr = "";
 
   if($email == ''||$name == ''||$password == ''||$sq == ''||$sqanswer == ''){
     
@@ -40,14 +39,12 @@
         'sqanswer' => $res['sqanswer'],
         'token' => $res['token']
       );
-  
+      echo json_encode($arr);
     }else{
       header("Status-Code:-1");
       header("summary:Email exists");
     }
     
   }
-
-  echo json_encode($arr);
 
 ?>
