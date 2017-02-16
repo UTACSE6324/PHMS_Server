@@ -28,11 +28,10 @@
     );
     
     $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
-    
+    echo json_encode($arr);
   }else{
     header("Status-Code:-1");
     header("summary:Login fail");
   }
   
-  echo json_encode($arr);
 ?>
