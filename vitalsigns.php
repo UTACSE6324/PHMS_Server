@@ -12,8 +12,6 @@
   $bsl = $_GET['bsl'];
   $chol = $_GET['chol'];
   
-  $arr = "";
-  
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   
@@ -35,7 +33,7 @@
         'bsl' => $bsl,
         'chol' => $chol
       );
-      
+       echo json_encode($arr);
     }else{
       header("Status-Code:-1");
       header("summary:Insert invalid");
@@ -45,5 +43,4 @@
     header("summary:Token out of date");
   }
   
-  echo json_encode($arr);
 ?>
