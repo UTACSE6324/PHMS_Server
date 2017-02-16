@@ -7,7 +7,6 @@ $password = $_GET['password'];
 $sq = $_GET['sq'];
 $sqanswer = $_GET['sqanswer'];
 $token = time();
-$arr = "";
 
 if($email == ''||$password == ''||$sq == ''||$sqanswer == ''){
 
@@ -39,14 +38,12 @@ if($email == ''||$password == ''||$sq == ''||$sqanswer == ''){
             'sqanswer' => $res['sqanswer'],
             'token' => $res['token']
         );
-
+        echo json_encode($arr);
     }else{
         header("Status-Code:-1");
         header("summary: Reset password failed. (Email does not exist or the answer does not match the sq_question) ");
     }
 
 }
-
-echo json_encode($arr);
 
 ?>
