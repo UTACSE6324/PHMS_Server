@@ -10,14 +10,12 @@
   $quantity = $_GET['quantity'];
   $unit = $_GET['unit'];
   $calorie = $_GET['calorie'];
-  
-  echo $unit;
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   if(!empty($res)){
     $ins = $pdo -> exec("insert into diethistory (uid, date, type, name, quantity, unit, calorie) 
-                          values ('$uid','$date','$type','$name','$quantity','unit','$calorie');");
+                          values ('$uid','$date','$type','$name','$quantity','$unit','$calorie');");
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
