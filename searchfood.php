@@ -3,6 +3,8 @@
   
   $query = $_GET['query'];
   
+  echo $query;
+
   //post方式
   $curlPost = "appId=b871bf7e&appKey=8aa879546b2064de87ebc15334754bab&fields=['item_name','Cnf_calories']&query='$query'"; 
   $ch=curl_init(); 
