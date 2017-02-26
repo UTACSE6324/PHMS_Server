@@ -24,7 +24,8 @@
       'height' => $res['height'],
       'bp' => $res['bp'],
       'bsl' => $res['bsl'],
-      'chol' => $res['chol']
+      'chol' => $res['chol'],
+      'calorie' => $res['calorie']
     );
     
     $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
