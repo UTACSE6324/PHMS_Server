@@ -16,7 +16,7 @@
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   
   if(!empty($res)){
-    $ins = $pdo -> exec("update user set age = $age,gender = $gender,weight = $weight,height=$height,
+    $ins = $pdo -> exec("update user set age = $age,gender = $gender,weight=$weight,height=$height,
       bp = $bp,bsl = $bsl,chol = $chol where uid = '$uid'");
     
     if($ins == 1){
