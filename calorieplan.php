@@ -21,13 +21,13 @@
       header("Status-Code:-1");
       header("summary:Insert invalid");
       
-      echo 'Fail';
+      echo 'Insert invalid';
     }
   }else{
     header("Status-Code:-1");
     header("summary:Token out of date");
     
-    echo 'Fail';
+    echo 'Token out of date';
   }
   
 ?>
