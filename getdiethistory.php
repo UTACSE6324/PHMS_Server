@@ -4,8 +4,7 @@
   $uid = $_GET['uid'];
   $token = $_GET['token'];
   $date = $_GET['date'];
-  
-  echo "aasd";
+
 
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
@@ -29,7 +28,7 @@
               "name" => $col['name'],
               "quantity" => $col['quantity'],
               "unit" => $col['unit'],
-              "calorie" => $col['calorie'],
+              "calorie" => $col['calorie']
             )
           );
       }
