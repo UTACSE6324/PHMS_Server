@@ -19,17 +19,16 @@
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
-      $arr = $pdo->lastInsertId();
+      echo $pdo->lastInsertId();
     }else{
       header("Status-Code:-1");
       header("summary:Insert invalid");
-      $arr = $pdo->errorInfo();
+      echo $pdo->errorInfo();
     }
   }else{
     header("Status-Code:-1");
     header("summary:Token out of date");
-    $arr = "Token out of date";
+    echo "Token out of date";
   }
-  
-  echo json_encode($arr);
+
 ?>
