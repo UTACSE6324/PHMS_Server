@@ -22,6 +22,7 @@
           
           array_push($arr,
             array(
+              "dietid" => $col['dietid']
               "type" => $col['type'],
               "name" => $col['name'],
               "quantity" => $col['quantity'],
