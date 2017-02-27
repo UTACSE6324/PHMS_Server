@@ -17,7 +17,7 @@
     }else{
       header("Status-Code:-1");
       header("summary:Insert invalid");
-      $arr = $pdo->errorInfo();
+      $arr = "Fail";
     }
   }else{
     header("Status-Code:-1");
