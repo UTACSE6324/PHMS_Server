@@ -14,7 +14,7 @@ $end_date = $_GET['end_date'];
 $quantity = $_GET['quantity'];
 $unit = $_GET['unit'];
 $instructions = $_GET['instructions'];
-$notifications = $_GET['notifications'];
+$notification = $_GET['notification'];
 $contacts = $_GET['contacts'];
 $image = $_GET['image'];
     
@@ -22,7 +22,10 @@ $image = $_GET['image'];
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
 
   if(!empty($res)){
-    $ins = $pdo -> exec("insert into medicine (uid, mid, name, reminder, times, days, start_date, end_date, quantity, unit, instructions, notification, contacts, image) values ('$uid','$mid','$name','$reminder','$times','$days','$start_date','$end_date','$quantity','$unit','$instructions','$notification','$contacts','$image');");
+    $ins = $pdo -> exec("insert into medicine (uid, mid, name, reminder, times, days, start_date, end_date, 
+                          quantity, unit, instructions, notification, contacts, image) 
+                          values ('$uid','$mid','$name','$reminder','$times','$days','$start_date','$end_date',
+                          '$quantity','$unit','$instructions','$notification','$contacts','$image');");
 
     if($ins == 1){
       header("Status-Code:1");
