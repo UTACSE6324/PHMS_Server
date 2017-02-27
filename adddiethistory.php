@@ -19,7 +19,7 @@
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
-      $arr = "Success";
+      $arr = $pdo->lastInsertId();
     }else{
       header("Status-Code:-1");
       header("summary:Insert invalid");
