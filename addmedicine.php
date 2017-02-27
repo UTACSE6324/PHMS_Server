@@ -22,10 +22,14 @@ $image = $_GET['image'];
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
 
   if(!empty($res)){
+    
+    $buffer = base64_decode($image);
+    $buffer = $pdo->real_escape_string($buffer);
+    
     $ins = $pdo -> exec("insert into medicine (uid, mid, name, reminder, times, days, start_date, end_date, 
                           quantity, unit, instructions, notification, contacts, image) 
                           values ('$uid','$mid','$name','$reminder','$times','$days','$start_date','$end_date',
-                          '$quantity','$unit','$instructions','$notification','$contacts','$image');");
+                          '$quantity','$unit','$instructions','$notification','$contacts','$buffer');");
 
     if($ins == 1){
       header("Status-Code:1");
