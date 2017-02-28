@@ -5,7 +5,7 @@ $RequestId=$_GET["mid"];
 $servername = "localhost";
 $username = "root";
 $password = "qgk112358";
-$dbname = "medicine";
+$dbname = "phms";
 
 $con = mysqli_connect($servername , $username, $password, $dbname );
 
