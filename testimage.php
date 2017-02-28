@@ -17,7 +17,7 @@ else {
   echo "<h3>Connection Success!</h3>";
 }
 
-$query = "SELECT image from `medicine` WHERE mid='a'"; 
+$query = "SELECT image from `medicine` WHERE mid='234'"; 
 
 $result = mysqli_query($con, $query) or die(mysqli_error()); 
 
