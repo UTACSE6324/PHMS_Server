@@ -2,11 +2,16 @@
 
 $RequestId=$_GET["mid"];
 
-$pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
+$servername = "localhost";
+$username = "root";
+$password = "qgk112358";
+$dbname = "medicine";
+
+$con = mysqli_connect($servername , $username, $password, $dbname );
 
 $query = "SELECT image from `medicine` WHERE mid=".$RequestId; 
 
-$result = $pdo -> query($query) -> fetch();
+$result = mysqli_query($con, $query) or die(mysqli_error()); 
 
 $photo = mysqli_fetch_array($result);
  
