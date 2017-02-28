@@ -1,6 +1,8 @@
 <?php 
 
 $RequestId=$_GET["row_id"];
+  $uid = $_GET['uid'];
+  $token = $_GET['token'];
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
