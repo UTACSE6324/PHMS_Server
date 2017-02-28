@@ -1,15 +1,15 @@
 <?php 
 header('content-type:text/html;charset=utf-8');
 
-$RequestId=$_GET["request_id"];
+$RequestId=$_GET["row_id"];
 
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   if(!empty($res)){
 
-$query = "SELECT work_image from `tbl_appointment_details` WHERE request_id=".$RequestId; 
+$query = "SELECT image from `medicine` WHERE mid=".$RequestId; 
 
-$result = mysqli_query($con, $query) or die(mysqli_error()); 
+$result = mysqli_query($pdo, $query) or die(mysqli_error()); 
 
 $photo = mysqli_fetch_array($result);
  
