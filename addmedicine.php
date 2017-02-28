@@ -16,7 +16,6 @@ $unit = $_GET['unit'];
 $instructions = $_GET['instructions'];
 $notification = $_GET['notification'];
 $contacts = $_GET['contacts'];
-$image = $_GET['image'];
     
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
@@ -27,9 +26,9 @@ $image = $_GET['image'];
     $buffer = $pdo->real_escape_string($buffer);
     
     $ins = $pdo -> exec("insert into medicine (uid, mid, name, reminder, times, days, start_date, end_date, 
-                          quantity, unit, instructions, notification, contacts, image) 
+                          quantity, unit, instructions, notification, contacts) 
                           values ('$uid','$mid','$name','$reminder','$times','$days','$start_date','$end_date',
-                          '$quantity','$unit','$instructions','$notification','$contacts','$buffer');");
+                          '$quantity','$unit','$instructions','$notification','$contacts');");
 
     if($ins == 1){
       header("Status-Code:1");
