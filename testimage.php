@@ -9,6 +9,14 @@ $dbname = "medicine";
 
 $con = mysqli_connect($servername , $username, $password, $dbname );
 
+if(!$con) {
+ echo "<h3>Connection not Success!</h3>";
+  die("Error in connection. " . mysqli_connect_error());
+}
+else {
+  echo "<h3>Connection Success!</h3>";
+}
+
 $query = "SELECT image from `medicine` WHERE mid='a'"; 
 
 $result = mysqli_query($con, $query) or die(mysqli_error()); 
