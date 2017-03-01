@@ -3,7 +3,6 @@
   
   $uid = $_GET['uid'];
   $token = $_GET['token'];
-  $mid = $_GET['mid'];
 
   $name = $_GET['name'];
   $reminder = $_GET['reminder'];
