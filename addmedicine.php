@@ -33,7 +33,7 @@
     }else{
       header("Status-Code:-1");
       header("summary:Insert invalid");
-      echo $pdo->errorInfo();
+      echo json_encode($pdo->errorInfo());
     }
   }else{
     header("Status-Code:-1");
