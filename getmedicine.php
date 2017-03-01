@@ -28,7 +28,9 @@
               "instructions" => $col['instructions'],
               "reminder" => $col['reminder'],
               "times" => $col['times'],
-              "date" => $col['date']
+              "days" => $col['days'],
+              "start_date" => $col['start_date'],
+              "end_date" => $col['end_date']
             )
           );
       }
