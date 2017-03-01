@@ -7,9 +7,7 @@
   $name = $_GET['name'];
   $reminder = $_GET['reminder'];
   $times = $_GET['times'];
-  $days = $_GET['days'];
-  $start_date = $_GET['start_date'];
-  $end_date = $_GET['end_date'];
+  $days = $_GET['date'];
   $quantity = $_GET['quantity'];
   $unit = $_GET['unit'];
   $instructions = $_GET['instructions'];
@@ -21,9 +19,9 @@
 
   if(!empty($res)){
  
-    $ins = $pdo -> exec("insert into medicine (uid, name, reminder, times, days, start_date, end_date, 
+    $ins = $pdo -> exec("insert into medicine (uid, name, reminder, times, date, 
                           quantity, unit, instructions, notification, contacts) 
-                          values ('$uid','$name','$reminder','$times','$days','$start_date','$end_date',
+                          values ('$uid','$name','$reminder','$times','$date',
                           '$quantity','$unit','$instructions','$notification','$contacts');");
 
     if($ins == 1){
