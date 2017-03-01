@@ -7,7 +7,7 @@
   $name = $_GET['name'];
   $reminder = $_GET['reminder'];
   $times = $_GET['times'];
-  $days = $_GET['date'];
+  $days = $_GET['days'];
   $quantity = $_GET['quantity'];
   $unit = $_GET['unit'];
   $instructions = $_GET['instructions'];
@@ -15,15 +15,16 @@
   $contacts = $_GET['contacts'];
   $start_date = $_GET['start_date'];
   $end_date = $_GET['end_date'];
+  
     
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
 
   if(!empty($res)){
  
-    $ins = $pdo -> exec("insert into medicine (uid, name, reminder, times, date, 
+    $ins = $pdo -> exec("insert into medicine (uid, name, reminder, times, days, 
                           quantity, unit, instructions, notification, contacts, start_date, end_date) 
-                          values ('$uid','$name','$reminder','$times','$date',
+                          values ('$uid','$name','$reminder','$times','$days',
                           '$quantity','$unit','$instructions','$notification','$contacts','$start_date','$end_date');");
 
     if($ins == 1){
