@@ -5,16 +5,9 @@
   $token = $_GET['token'];
 
   $name = $_GET['name'];
-  $reminder = $_GET['reminder'];
-  $times = $_GET['times'];
-  $days = $_GET['days'];
   $quantity = $_GET['quantity'];
   $unit = $_GET['unit'];
   $instructions = $_GET['instructions'];
-  $notification = $_GET['notification'];
-  $contacts = $_GET['contacts'];
-  $start_date = $_GET['start_date'];
-  $end_date = $_GET['end_date'];
   
     
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
@@ -22,10 +15,8 @@
 
   if(!empty($res)){
  
-    $ins = $pdo -> exec("insert into medicine (uid, name, reminder, times, days, 
-                          quantity, unit, instructions, notification, contacts, start_date, end_date) 
-                          values ('$uid','$name','$reminder','$times','$days',
-                          '$quantity','$unit','$instructions','$notification','$contacts','$start_date','$end_date');");
+    $ins = $pdo -> exec("insert into medicine (uid, name, quantity, unit, instructions) 
+                          values ('$uid','$name','$quantity','$unit','$instructions');");
 
     if($ins == 1){
       header("Status-Code:1");
