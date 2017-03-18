@@ -10,7 +10,7 @@
   $start_date = $_GET['start_date'];
   $end_date = $_GET['end_date'];
 
-  echo $mid.$times.$days.$start_date.$end_date;
+  echo $mid."=".$times."=".$days."=".$start_date."=".$end_date;
     
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
