@@ -3,8 +3,8 @@
   
   $uid = $_GET['uid'];
   $token = $_GET['token'];
-  $date = $_GET['date'];
-
+  $startdate = $_GET['startdate'];
+  $enddate = $_GET['enddate'];
 
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
@@ -13,7 +13,7 @@
     header("Status-Code:1");
     header("summary:Success");
     
-    $ins = $pdo -> query("select * from diethistory where uid = '$uid' and date = '$date';") -> fetchAll();
+    $ins = $pdo -> query("select * from diethistory where uid = '$uid' and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
     
     if(!empty($ins)){
       $num = count($ins);
