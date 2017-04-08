@@ -26,7 +26,6 @@
               "quantity" => $col['quantity'],
               "unit" => $col['unit'],
               "instructions" => $col['instructions'],
-              "reminder" => $col['reminder'],
               "times" => $col['times'],
               "days" => $col['days'],
               "start_date" => $col['start_date'],
