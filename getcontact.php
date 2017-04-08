@@ -12,21 +12,34 @@
     header("Status-Code:1");
     header("summary:Success");
     $ins = $pdo -> query("select * from contact where uid = '$uid';") -> fetchAll();
+    $cid = $pdo -> query("select cid from user where uid = '$uid';") -> fetch();
     
     if(!empty($ins)){
       $num = count($ins);
    
       for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
-          
-          array_push($arr,
-            array(
-              "cid" => $col['cid'],
-              "name" => $col['name'],
-              "phone" => $col['phone'],
-              "email" => $col['email']
-            )
-          );
+        
+          if($cid == $col['cid'])
+            array_push($arr,
+              array(
+                "cid" => $col['cid'],
+                "name" => $col['name'],
+                "phone" => $col['phone'],
+                "email" => $col['email'],
+                "default" => 1
+              )
+            );
+          else
+            array_push($arr,
+              array(
+                "cid" => $col['cid'],
+                "name" => $col['name'],
+                "phone" => $col['phone'],
+                "email" => $col['email'],
+                "default" => 0
+              )
+            );
       }
       
     }else{
