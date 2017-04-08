@@ -10,7 +10,7 @@
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   
   if(!empty($res)){
-    $ins = $pdo -> exec("alter user set cid = '$cid' where uid = '$uid'");
+    $ins = $pdo -> exec("update user set cid = '$cid' where uid = '$uid'");
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
