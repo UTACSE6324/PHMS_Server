@@ -27,7 +27,7 @@
                 "name" => $col['name'],
                 "phone" => $col['phone'],
                 "email" => $col['email'],
-                "defaultc" => '1'
+                "defaultc" => $cid 
               )
             );
           else
@@ -37,7 +37,7 @@
                 "name" => $col['name'],
                 "phone" => $col['phone'],
                 "email" => $col['email'],
-                "defaultc" => '0'
+                "defaultc" => $cid
               )
             );
       }
