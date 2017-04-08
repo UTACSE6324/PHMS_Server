@@ -22,6 +22,7 @@
           array_push($arr,
             array(
               "mid" => $col['mid'],
+              "api_id" => $col['apiID'],
               "name" => $col['name'],
               "quantity" => $col['quantity'],
               "unit" => $col['unit'],
