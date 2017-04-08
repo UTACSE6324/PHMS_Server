@@ -20,14 +20,14 @@
       for ($i = 0; $i < $num; ++$i) {
           $col = $ins[$i];
         
-          if($cid == $col['cid'])
+          if($cid['cid'] == $col['cid'])
             array_push($arr,
               array(
                 "cid" => $col['cid'],
                 "name" => $col['name'],
                 "phone" => $col['phone'],
                 "email" => $col['email'],
-                "defaultc" => $cid 
+                "defaultc" => '1' 
               )
             );
           else
@@ -37,7 +37,7 @@
                 "name" => $col['name'],
                 "phone" => $col['phone'],
                 "email" => $col['email'],
-                "defaultc" => $cid
+                "defaultc" => '0'
               )
             );
       }
