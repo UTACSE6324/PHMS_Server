@@ -4,6 +4,7 @@
   $uid = $_GET['uid'];
   $token = $_GET['token'];
 
+  $api_id = $_GET['api_id'];
   $name = $_GET['name'];
   $quantity = $_GET['quantity'];
   $unit = $_GET['unit'];
@@ -15,8 +16,8 @@
 
   if(!empty($res)){
  
-    $ins = $pdo -> exec("insert into medicine (uid, name, quantity, unit, instructions) 
-                          values ('$uid','$name','$quantity','$unit','$instructions');");
+    $ins = $pdo -> exec("insert into medicine (uid, name, quantity, unit, instructions, apiID) 
+                          values ('$uid','$name','$quantity','$unit','$instructions','$api_id');");
 
     if($ins == 1){
       header("Status-Code:1");
