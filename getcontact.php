@@ -21,6 +21,7 @@
           
           array_push($arr,
             array(
+              "cid" => $col['cid'],
               "name" => $col['name'],
               "phone" => $col['phone'],
               "email" => $col['email']
