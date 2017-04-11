@@ -14,7 +14,7 @@
 
     $apiRes = json_decode($apiRes, true);
     
-    $conflictList = $apiRes['fullInteractionTypeGroup'];
+    $conflictList = $apiRes['fullInteractionTypeGroup']['fullInteractionType'];
     var_dump($conflictList);
     $num = count($conflictList);
     
