@@ -18,6 +18,7 @@
     $set = $pdo -> query("select name, cid from user where uid = '$uid'");
     $username = $set['name'];
     $cid = $set['cid'];
+    var_dump($set);
    
     $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
     
