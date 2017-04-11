@@ -10,11 +10,10 @@
       $url = $url.$ins[$i]['apiID'].'+';
     }
     
-    echo $url;
+    $apiRes = file_get_contents($url);
+    echo $apiRes;
     
-    $res = file_get_contents($url);
-    
-    $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$res')");
+    $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$apiRes')");
     
     echo $res;
   }
