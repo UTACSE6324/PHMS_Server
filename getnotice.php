@@ -22,7 +22,7 @@
           array_push($arr,
             array(
               "nid" => $col['nid'],
-              "isnew" => $col['inew'],
+              "isnew" => $col['isnew'],
               "summary" => $col['summary'],
               "description" => $col['description']
             )
