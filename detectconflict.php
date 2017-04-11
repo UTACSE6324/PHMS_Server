@@ -18,7 +18,6 @@
     $set = $pdo -> query("select name, cid from user where uid = '$uid'")-> fetch();
     $username = $set['name'];
     $cid = $set['cid'];
-    var_dump($set);
    
     $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
     
@@ -36,6 +35,8 @@
       }
     }
    
+    echo $cid;
+    echo $cid==0;
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
