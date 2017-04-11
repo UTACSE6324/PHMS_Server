@@ -11,8 +11,9 @@
     }
     
     $apiRes = file_get_contents($url);
-    $apiRes = json_decode($apiRes);
+    $apiRes = json_decode($apiRes, true);
     var_dump($apiRes);
+    
     echo '<br>';
     
     $conflict = $apiRes['nlmDisclaimer'];
