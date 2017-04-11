@@ -9,7 +9,7 @@
   
   if(!empty($res)){
     $ins = $pdo -> exec("select count(*) from notice where uid = '$uid' and isnew = 1;") -> fetch();
-    $arr = $ins('count(*)');
+    $arr = $ins;
   }else{
     header("Status-Code:-1");
     header("summary:Token out of date");
