@@ -21,6 +21,10 @@
    
     $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
     
+    var_dump($set);
+    var_dump($set['cid']);
+    echo $cid==0;
+    
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
          $summary = $conflict['comment'];
@@ -35,9 +39,6 @@
       }
     }
    
-    var_dump($set);
-    var_dump($set['cid']);
-    echo $cid==0;
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
