@@ -16,15 +16,16 @@
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
     
-    $conflictList = json_decode($conflictList, true);
-    var_dump($conflictList['fullInteractionType']);
-    
-    
     $num = count($conflictList);
     
     for($i = 0; $i < $num; ++$i){
-      echo "comment:".$conflictList[$i]['comment']."<br>";
-      echo "description:".$conflictList[$i]['description']."<br><br><br>";
+      
+      $num2 = count($conflictList[$i]['fullInteractionType']);
+      for($j = 0; $j < $num2; ++$j){
+         $conflict = $conflictList[$i]['fullInteractionType'][$j];
+         echo "comment:".$conflict['comment']."<br>";
+         echo "description:".$conflict['description']."<br><br><br>";
+      }
     }
     
     if($conflict!=null)
