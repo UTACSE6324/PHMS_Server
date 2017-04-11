@@ -16,5 +16,5 @@
     $arr = "0";
   }
   
-  echo json_encode($arr);
+  echo $arr;
 ?>
