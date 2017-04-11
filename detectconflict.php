@@ -18,13 +18,13 @@
     
     $num = count($conflictList);
     
-    for($i = 0; $i < $num; ++$i){
-      
-      $num2 = count($conflictList[$i]['fullInteractionType']);
-      for($j = 0; $j < $num2; ++$j){
-         $conflict = $conflictList[$i]['fullInteractionType'][$j];
+    foreach ($conflictList as $listitem){
+      foreach ($listitem['fullInteractionType'] as $conflict){
          echo "comment:".$conflict['comment']."<br>";
-         echo "description:".$conflict['description']."<br><br><br>";
+         foreach ($conflict['interactionPair'] as $description){
+            echo "description:".$description['description']."<br>";
+         }
+         echo"<br><br><br>";
       }
     }
     
