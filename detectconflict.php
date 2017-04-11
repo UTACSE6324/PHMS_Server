@@ -24,8 +24,8 @@
             $description = $description.$pair['description']."\n";
          }
         
-         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$conflict','$description')");
-         echo json_encode($pdo->errorInfo());
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
+    
       }
     }
    
