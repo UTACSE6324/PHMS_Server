@@ -11,12 +11,11 @@
     }
     
     $apiRes = file_get_contents($url);
+    echo $apiRes;
 
     $apiRes = json_decode($apiRes, true);
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
-    
-    $num = count($conflictList);
     
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
