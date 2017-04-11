@@ -12,14 +12,10 @@
     
     $apiRes = file_get_contents($url);
     $apiRes = json_decode($apiRes, true);
-    var_dump($apiRes);
     
-    echo '<br>';
-    
-    $conflict = $apiRes['nlmDisclaimer'];
-    echo $conflict;
+    $conflict = $apiRes['fullInteractionTypeGroup']['fullInteractionType']['comment'];
+  
+    if($conflict!=null)
     $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$conflict')");
-    
-    //echo $res;
   }
 ?>
