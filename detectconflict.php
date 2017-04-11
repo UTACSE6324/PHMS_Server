@@ -13,8 +13,13 @@
     $apiRes = file_get_contents($url);
     $apiRes = json_decode($apiRes, true);
     
+    var_dump($apiRes);
+    
     $conflict = $apiRes['fullInteractionTypeGroup']['fullInteractionType']['comment'];
   
+    echo '<br>';
+    echo $conflict;
+    
     if($conflict!=null)
     $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$conflict')");
   }
