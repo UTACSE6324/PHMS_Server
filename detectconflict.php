@@ -21,23 +21,26 @@
    
     $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
     
-    var_dump($set);
-    var_dump($set['cid']);
-    echo $cid==0;
-    
     foreach ($conflictList as $listitem){
+      echo "1";
       foreach ($listitem['fullInteractionType'] as $conflict){
          $summary = $conflict['comment'];
          $description = "";
+         
+         echo "2";
         
          foreach ($conflict['interactionPair'] as $pair){
             $description = $description.$pair['description']."\n";
+           
+            echo "3";
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')")->fetch();
          $message = $message.$summary."\n".$description."\n";
       }
     }
+    
+    echo "end";
    
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
