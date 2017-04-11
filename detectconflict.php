@@ -1,5 +1,5 @@
 <?php
-
+  echo "in";
   $ins = $pdo -> query("select apiID from medicine where uid = '$uid';") -> fetchAll();
   
   $url='https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=';
