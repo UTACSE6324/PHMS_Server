@@ -20,15 +20,16 @@
     
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
-         echo "comment:".$conflict['comment']."<br>";
-         foreach ($conflict['interactionPair'] as $description){
-            echo "description:".$description['description']."<br>";
+         $summary = $conflict['comment'];
+         $description = "";
+        
+         foreach ($conflict['interactionPair'] as $pair){
+            $description = $description.$pair['description']."\n";
          }
-         echo"<br><br><br>";
+        
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$conflict','$description')");
       }
     }
-    
-    if($conflict!=null)
-    $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$conflict')");
+   
   }
 ?>
