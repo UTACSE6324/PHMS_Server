@@ -43,6 +43,10 @@
       $headers = "From: $from";
       $subject = "Medicine Conflicts Notice";
       mail($to,$subject,$message,$headers);  
+      
+      echo $from."<br>";
+      echo $to."<br>";
+      echo $message;
     }
     
   }
