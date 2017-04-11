@@ -15,6 +15,12 @@
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
     
+    $set = $pdo -> query("select name, cid from user where uid = '$uid'");
+    $username = $set['name'];
+    $cid = $set['cid'];
+   
+    $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
+    
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
          $summary = $conflict['comment'];
@@ -25,9 +31,19 @@
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
-    
+         $message = $message.$summary."\n".$description."\n";
       }
     }
    
+    if($cid != 0){
+      $email = $pdo -> query("select email from contact where cid = '$cid'")['email'];
+      
+      $to = $email;
+      $from = "phms@phms.jarviszhang.com";
+      $headers = "From: $from";
+      $subject = "Medicine Conflicts Notice";
+      mail($to,$subject,$message,$headers);  
+    }
+    
   }
 ?>
