@@ -35,8 +35,8 @@
       }
     }
    
-    print($set);
-    print_r($set['cid']);
+    var_dump($set);
+    var_dump($set['cid']);
     echo $cid==0;
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
