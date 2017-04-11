@@ -12,6 +12,8 @@
     
     $res = file_get_contents($url);
     
-    $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$res');")
+    $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$res')");
+    
+    echo $res;
   }
 ?>
