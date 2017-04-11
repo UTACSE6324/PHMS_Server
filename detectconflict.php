@@ -1,8 +1,6 @@
 <?php
   
   $ins = $pdo -> query("select apiID from medicine where uid = '$uid';") -> fetchAll();
-
-  var_dump($ins);
   
   $url='https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=';
 
@@ -11,6 +9,8 @@
     for ($i = 0; $i < $num; ++$i) {
       $url = $url.$ins[$i]['apiID'].'+';
     }
+    
+    echo $url;
     
     $res = file_get_contents($url);
     
