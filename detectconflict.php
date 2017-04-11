@@ -11,9 +11,9 @@
     }
     
     $apiRes = file_get_contents($url);
-    echo $apiRes;
     
     $conflict = $apiRes['nlmDisclaimer'];
+    echo $conflict;
     $res = $pdo -> query("insert into notice (uid,isnew,summary) values ('1','1','$conflict')");
     
     echo $res;
