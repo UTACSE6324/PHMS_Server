@@ -23,8 +23,8 @@
     $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
     
     ini_set('display_errors',1);            //错误信息 
-ini_set('display_startup_errors',1);    //php启动错误信息 
-error_reporting(-1);       
+    ini_set('display_startup_errors',1);    //php启动错误信息 
+    error_reporting(-1);       
     
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
@@ -35,7 +35,7 @@ error_reporting(-1);
             $description = $description.$pair['description']."\n";
          }
         
-         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')")->fetch();
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
          $message = $message.$summary."\n".$description."\n";
       }
     }
