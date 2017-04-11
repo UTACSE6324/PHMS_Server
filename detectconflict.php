@@ -15,7 +15,7 @@
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
     
-    $set = $pdo -> query("select name, cid from user where uid = '$uid'");
+    $set = $pdo -> query("select name, cid from user where uid = '$uid'")-> fetch();
     $username = $set['name'];
     $cid = $set['cid'];
     var_dump($set);
@@ -31,13 +31,13 @@
             $description = $description.$pair['description']."\n";
          }
         
-         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')")->fetch();
          $message = $message.$summary."\n".$description."\n";
       }
     }
    
     if($cid != 0){
-      $email = $pdo -> query("select email from contact where cid = '$cid'")['email'];
+      $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
       $to = $email;
       $from = "phms@phms.jarviszhang.com";
