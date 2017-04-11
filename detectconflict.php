@@ -16,6 +16,8 @@
     $conflictList = $apiRes['fullInteractionTypeGroup']['fullInteractionType'];
     $num = count($conflictList);
     
+    echo $num;
+    
     for($i = 0; $i < $num; ++$i){
       echo "comment:".$conflictList[$i]['comment']."<br>";
       echo "description:".$conflictList[$i]['description']."<br><br><br>";
