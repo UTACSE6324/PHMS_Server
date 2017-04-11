@@ -1,9 +1,9 @@
 <?php
   
   $ins = $pdo -> query("select apiID from medicine where uid = '$uid';") -> fetchAll();
-  
-  $url='https://rxnav.nlm.nih.gov/REST/interaction/interaction.json?rxcui=';
-
+ 
+  $url='https://rxnav.nlm.nih.gov/REST/interaction/list.json?rxcuis=';
+    
   $num = count($ins);
   if($num > 1){
     for ($i = 0; $i < $num; ++$i) {
