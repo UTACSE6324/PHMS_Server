@@ -20,13 +20,12 @@
          $summary = $conflict['comment'];
          $description = "";
         
-         echo $summary."<br>";
-        
          foreach ($conflict['interactionPair'] as $pair){
             $description = $description.$pair['description']."\n";
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$conflict','$description')");
+         echo $pdo->errorInfo();
       }
     }
    
