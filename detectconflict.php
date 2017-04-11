@@ -25,7 +25,7 @@
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$conflict','$description')");
-         echo $pdo->errorInfo();
+         echo json_encode($pdo->errorInfo());
       }
     }
    
