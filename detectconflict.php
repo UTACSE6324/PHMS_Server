@@ -14,6 +14,7 @@
     $apiRes = json_decode($apiRes, true);
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
+    echo count($conflictList);
     
     $set = $pdo -> query("select name, cid from user where uid = '$uid'")-> fetch();
     $username = $set['name'];
@@ -22,17 +23,12 @@
     $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
     
     foreach ($conflictList as $listitem){
-      echo "1";
       foreach ($listitem['fullInteractionType'] as $conflict){
          $summary = $conflict['comment'];
          $description = "";
-         
-         echo "2";
         
          foreach ($conflict['interactionPair'] as $pair){
             $description = $description.$pair['description']."\n";
-           
-            echo "3";
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')")->fetch();
