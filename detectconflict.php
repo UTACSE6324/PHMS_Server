@@ -14,17 +14,12 @@
     $apiRes = json_decode($apiRes, true);
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
-    echo count($conflictList);
     
     $set = $pdo -> query("select name, cid from user where uid = '$uid'")-> fetch();
     $username = $set['name'];
     $cid = $set['cid'];
    
-    $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n";
-    
-    ini_set('display_errors',1);            //错误信息 
-    ini_set('display_startup_errors',1);    //php启动错误信息 
-    error_reporting(-1);       
+    $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n\n";
     
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
@@ -36,7 +31,7 @@
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
-         $message = $message.$summary."\n".$description."\n";
+         $message = "<h1>".$message.$summary."</h1>\n".$description."\n";
       }
     }
     
@@ -50,10 +45,6 @@
       $headers = "From: $from";
       $subject = "Medicine Conflicts Notice";
       mail($to,$subject,$message,$headers);  
-      
-      echo $from."<br>";
-      echo $to."<br>";
-      echo $message;
     }
     
   }
