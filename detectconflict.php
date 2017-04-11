@@ -34,8 +34,6 @@
          $message = "<h1>".$message.$summary."</h1>\n".$description."\n";
       }
     }
-    
-    echo "end";
    
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
