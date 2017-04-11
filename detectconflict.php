@@ -11,6 +11,7 @@
     }
     
     $apiRes = file_get_contents($url);
+    $apiRes = json_decode($apiRes);
     echo $apiRes;
     echo '<br>';
     
