@@ -11,12 +11,11 @@
     }
     
     $apiRes = file_get_contents($url);
+    echo $apiRes;
     $apiRes = json_decode($apiRes, true);
     
     $conflictList = $apiRes['fullInteractionTypeGroup']['fullInteractionType'];
     $num = count($conflictList);
-    
-    var_dump($conflictList);
     
     for($i = 0; $i < $num; ++$i){
       echo "comment:".$conflictList[$i]['comment']."<br>";
