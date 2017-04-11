@@ -23,6 +23,8 @@
          $summary = $conflict['comment'];
          $description = "";
         
+         echo $summary."<br>";
+        
          foreach ($conflict['interactionPair'] as $pair){
             $description = $description.$pair['description']."\n";
          }
