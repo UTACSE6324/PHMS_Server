@@ -19,7 +19,8 @@
     $username = $set['name'];
     $cid = $set['cid'];
    
-    $message = "Hello !\n There is a conflict in '$username''s medicine list. Please read the following details: \n\n";
+    $message = "Hello !\n There is a conflict in phms user $username's 
+                medicine list. Please read the following details: \n\n";
     
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
@@ -31,7 +32,7 @@
          }
         
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
-         $message = "<h1>".$message.$summary."</h1>\n".$description."\n";
+         $message = $message.$summary."\n".$description."\n";
       }
     }
    
