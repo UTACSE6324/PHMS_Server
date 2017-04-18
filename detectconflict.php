@@ -80,7 +80,9 @@
       }
     }
     
-    $message .= "<div style='font-size:18px; margin:20px; float:right;'>More Medicine Details : lhncbc.nlm.nih.gov</div>";
+    $message .= "<div width='100%' style='background-color:#607d8b;'>";
+    $message .= "<div style='font-size:18px; margin:16px; float:right;'>More Medicine Details : lhncbc.nlm.nih.gov</div>";
+    $message .= '</div>';
     $message .= '</body></html>';
     
     if($cid != 0){
