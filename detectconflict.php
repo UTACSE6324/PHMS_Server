@@ -31,7 +31,7 @@
          $id1 = strstr($list11[0],'=');
          $name1 = strstr($list11[1],'=');
          
-         $list12 = explode(".",$list1[1]);
+         $list12 = explode(",",$list1[1]);
          $id2 = strstr($list12[0],'=');
          $name2 = strstr($list12[1],'=');
         
@@ -74,7 +74,7 @@
       }
     }
     
-    $message .= "<div onclick='window.open('https://lhncbc.nlm.nih.gov/');'>Click here for more details</div>";
+    $message .= "<div onclick=window.open('https://lhncbc.nlm.nih.gov/')>Click here for more details</div>";
     
     $message .= '</body></html>';
     
