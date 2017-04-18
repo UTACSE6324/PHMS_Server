@@ -29,11 +29,15 @@
         
          $list11 = explode(",",$list1[0]);
          $id1 = strstr($list11[0],'=');
+         $id1 = preg_replace('=','',$id1);
          $name1 = strstr($list11[1],'=');
+         $name1 = preg_replace('=','',$name1);
          
          $list12 = explode(",",$list1[1]);
          $id2 = strstr($list12[0],'=');
+         $id2 = preg_replace('=','',$id2);
          $name2 = strstr($list12[1],'=');
+         $name2 = preg_replace('=','',$name2);
         
          $message .= "<table rules='all' width= '100%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
          $message .= "<tr style='background: #eee;'>
