@@ -74,8 +74,8 @@
       }
     }
     
-    $message .= "<input type=\"button\" value=\"Click here for more deatils\" 
-                  onclick=\"javascript:location.href='https://lhncbc.nlm.nih.gov'\">";
+    $message .= "<input type=/"button/" value=/"Click here for more medicine information./"
+                  onclick=/"javascrtpt:window.location.href='lhncbc.nlm.nih.gov'/">";
     
     $message .= '</body></html>';
     
