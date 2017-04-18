@@ -38,27 +38,28 @@
          $id2 = preg_replace('/[=]/','',$id2);
          $name2 = strstr($list12[1],'=');
          $name2 = preg_replace('/[=]/','',$name2);
-        
-         $message .= "<table rules='all' width= '100%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
-         $message .= "<tr style='background: #eee;'>
+         
+         $section = "";
+         $section .= "<table rules='all' width= '100%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
+         $section .= "<tr style='background: #eee;'>
                       <td colspan='2'> Drug1 </td>
                       </tr>";
-         $message .= "<tr>
+         $section .= "<tr>
                       <td><strong>Id:</strong> </td>
                       <td>".$id1."</td>
                       </tr>";
-         $message .= "<tr>
+         $section .= "<tr>
                       <td><strong>Name:</strong> </td>
                       <td>".$name1."</td>
                       </tr>";
-         $message .= "<tr style='background: #eee;'>
+         $section .= "<tr style='background: #eee;'>
                       <td colspan='2'> Drug2 </td>
                       </tr>";
-         $message .= "<tr>
+         $section .= "<tr>
                       <td><strong>Id:</strong> </td>
                       <td>".$id2."</td>
                       </tr>";
-         $message .= "<tr>
+         $section .= "<tr>
                       <td><strong>Name:</strong> </td>
                       <td>".$name2."</td>
                       </tr>";
@@ -69,12 +70,13 @@
             $description = $description.$pair['description']."\n";
          }
         
-         $message .= "<tr style='background: #eee;'>
+         $section .= "<tr style='background: #eee;'>
                       <td colspan='2'>".$description."</td>
                       </tr>";
-         $message .= "</table>";
+         $section .= "</table>";
+         $message .= $section;
         
-         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$message','$description')");
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$section','$description')");
       }
     }
     
