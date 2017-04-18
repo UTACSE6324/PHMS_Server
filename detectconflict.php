@@ -43,6 +43,7 @@
       $from = "phms@phms.jarviszhang.com";
       $headers = "From: $from";
       $subject = "Medicine Conflicts Notice";
+      $message = "<html><head></head><body><div>abc</div><body></html>";
       mail($to,$subject,$message,$headers);  
     }
     
