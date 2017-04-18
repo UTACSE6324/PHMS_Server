@@ -69,12 +69,12 @@
             $description = $description.$pair['description']."\n";
          }
         
-         $message .= "<tr style='background: #b9f6ca;'>
+         $message .= "<tr style='background: #eee;'>
                       <td colspan='2'>".$description."</td>
                       </tr>";
          $message .= "</table>";
         
-         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$message','$description')");
       }
     }
     
