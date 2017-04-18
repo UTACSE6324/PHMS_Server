@@ -25,14 +25,52 @@
     foreach ($conflictList as $listitem){
       foreach ($listitem['fullInteractionType'] as $conflict){
          $summary = $conflict['comment'];
-         $description = "";
+         $list1  = explode(".",$summary);
         
+         $list11 = explode(",",$list1[0]);
+         $id1 = strstr($list11[0],'=');
+         $name1 = strstr($list11[1],'=');
+         
+         $list12 = explode(".",$list1[1]);
+         $id2 = strstr($list12[0],'=');
+         $name2 = strstr($list12[1],'=');
+        
+         $message .= '<table rules="all" style="padding: 10px; border-color: #666;" cellpadding="10">';
+         $message .= "<tr style='background: #eee;'>
+                      <td colspan='2'> Drug1 </td>
+                      </tr>";
+         $message .= "<tr>
+                      <td><strong>Id:</strong> </td>
+                      <td>".$id1."</td>
+                      </tr>";
+         $message .= "<tr>
+                      <td><strong>Name:</strong> </td>
+                      <td>".$name1."</td>
+                      </tr>";
+         $message .= "<tr style='background: #eee;'>
+                      <td colspan='2'> Drug2 </td>
+                      </tr>";
+         $message .= "<tr>
+                      <td><strong>Id:</strong> </td>
+                      <td>".$id2."</td>
+                      </tr>";
+         $message .= "<tr>
+                      <td><strong>Name:</strong> </td>
+                      <td>".$name2."</td>
+                      </tr>";
+         
+        
+         $description = "";        
          foreach ($conflict['interactionPair'] as $pair){
             $description = $description.$pair['description']."\n";
          }
         
+         $message .= "<tr style='background: #eee;'>
+                      <td colspan='2'>".$description."</td>
+                      </tr>";
+         $message .= "</table>";
+        
          $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
-         $message .= $summary."\n".$description."\n";
       }
     }
     
