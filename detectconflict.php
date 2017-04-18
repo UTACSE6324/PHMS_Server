@@ -74,7 +74,8 @@
       }
     }
     
-    $message .= "<div onclick=window.open('https://lhncbc.nlm.nih.gov/')>Click here for more details</div>";
+    $message .= "<input type=\"button\" value=\"Click here for more deatils\" 
+                  onclick=\"javascript:location.href='https://lhncbc.nlm.nih.gov'\">";
     
     $message .= '</body></html>';
     
