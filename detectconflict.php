@@ -69,7 +69,7 @@
             $description = $description.$pair['description']."\n";
          }
         
-         $message .= "<tr>
+         $message .= "<tr style='background: #b9f6ca;'>
                       <td colspan='2'>".$description."</td>
                       </tr>";
          $message .= "</table>";
@@ -78,6 +78,7 @@
       }
     }
     
+    $message .= "<div style='font-size:18px; margin:20px; float:right;'>More Medicine Details : lhncbc.nlm.nih.gov</div>";
     $message .= '</body></html>';
     
     if($cid != 0){
