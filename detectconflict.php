@@ -65,7 +65,7 @@
             $description = $description.$pair['description']."\n";
          }
         
-         $message .= "<tr style='background: #eee;'>
+         $message .= "<tr>
                       <td colspan='2'>".$description."</td>
                       </tr>";
          $message .= "</table>";
@@ -74,16 +74,13 @@
       }
     }
     
-    $message .= "<input type=/"button/" value=/"Click here for more medicine information./"
-                  onclick=/"javascrtpt:window.location.href='lhncbc.nlm.nih.gov'/">";
-    
     $message .= '</body></html>';
     
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
       $to = $email;
-      $from = "phms@phms.jarviszhang.com";
+      $from = "usersupport@phms.jarviszhang.com";
       $headers = "From: $from\r\n";
       $headers .= "CC: $from\r\n";
       $headers .= "MIME-Version: 1.0\r\n";
