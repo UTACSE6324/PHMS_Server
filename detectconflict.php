@@ -35,7 +35,7 @@
          $id2 = strstr($list12[0],'=');
          $name2 = strstr($list12[1],'=');
         
-         $message .= "<table rules='all' width= '100%' style='margin:10px; padding: 10px; border-color: #666;' cellpadding='10'>";
+         $message .= "<table rules='all' width= '100%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
          $message .= "<tr style='background: #eee;'>
                       <td colspan='2'> Drug1 </td>
                       </tr>";
