@@ -74,8 +74,11 @@
       }
     }
     
+    
     $message .= '</body></html>';
-   
+    
+    $message .= "<div onclick='window.open('https://lhncbc.nlm.nih.gov/');'>Click here for more details</div>";
+    
     if($cid != 0){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
