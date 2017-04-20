@@ -6,13 +6,14 @@
   
   $date = $_GET['date'];
   $name = $_GET['name'];
+  $type = $_GET['type'];
   $summary = $_GET['summary'];
   
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   
   if(!empty($res)){
-    $ins = $pdo -> exec("insert into note (uid, name, date, summary) values ('$uid','$name','$date','$summary');");
+    $ins = $pdo -> exec("insert into note (uid, type, name, date, summary) values ('$uid','$type','$name','$date','$summary');");
     if($ins == 1){
       header("Status-Code:1");
       header("summary:Success");
