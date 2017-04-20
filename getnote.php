@@ -22,6 +22,7 @@
           array_push($arr,
             array(
               "noteid" => $col['noteId'],
+              "type" => $col['type'],
               "name" => $col['name'],
               "date" => $col['date'],
               "summary" => $col['summary']
