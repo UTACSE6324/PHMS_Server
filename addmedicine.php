@@ -23,8 +23,6 @@
       header("Status-Code:1");
       header("summary:Success");
       echo $pdo->lastInsertId();
-      
-      require_once ("detectconflict.php");
     }else{
       header("Status-Code:-1");
       header("summary:Insert invalid");
@@ -36,4 +34,5 @@
     echo "Token out of date";
   }
   
+  require_once ("detectconflict.php");
 ?>
