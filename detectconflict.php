@@ -78,7 +78,7 @@
          $message .= $section;
          
          try{
-            $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$section','$description')");
+            $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','stripslashes($section)','$description')");
             $message .= implode($pdo->errorInfo());
          }catch(Exception $e){
             $message .= implode($pdo->errorInfo());
