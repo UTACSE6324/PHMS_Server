@@ -77,7 +77,7 @@
          $section .= "</table>";
          $message .= $section;
         
-         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$summary','$description')");
+         $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$section','$description')");
       }
     }
     
