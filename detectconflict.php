@@ -15,10 +15,11 @@
     
     $conflictList = $apiRes['fullInteractionTypeGroup'];
     
-    $set = $pdo -> query("select name, cid from user where uid = '$uid'")-> fetch();
+    $set = $pdo -> query("select name, cid, notify from user where uid = '$uid'")-> fetch();
     $username = $set['name'];
+    $notify = $set['notify'];
     $cid = $set['cid'];
-   
+    
     $message  = '<html><body>';
     $message .= "<img width='100%' src='http://45.55.179.123/img/mail_head.png'/>";
       
@@ -85,7 +86,7 @@
     $message .= '</div>';
     $message .= '</body></html>';
     
-    if($cid != 0){
+    if($cid != 0 && $notify == 1){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
       $to = $email;
