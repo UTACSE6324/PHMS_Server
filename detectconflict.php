@@ -79,6 +79,7 @@
          
          try{
             $pdo -> query("insert into notice (uid,isnew,summary,description) values ('$uid','1','$section','$description')");
+            $message .= $pdo->errorInfo();
          }catch(Exception $e){
             $message .= $pdo->errorInfo();
          }
