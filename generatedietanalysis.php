@@ -25,6 +25,7 @@
 <body>
   <!-- Identify where the chart should be drawn. -->
   <div id="myPieChart"/>
+  <div>
   <?php 
   echo "111";
   $token = $_GET['token'];
@@ -32,5 +33,6 @@
   $uid = $pdo -> query("select uid from user where token = '$token';") -> fetch(); 
   echo $uid;
   ?>
+  </div>
 </body>
 </html>
