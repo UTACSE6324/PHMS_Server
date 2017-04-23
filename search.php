@@ -16,7 +16,7 @@
     header("summary:Success");
     
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '%$key%';") -> fetchAll();
-    echo "select * from medicine where uid = '$uid' and name like '%$key%';";
+    echo json_encode($med);
     /*
     $medArray = array();
     foreach($med as $col){
