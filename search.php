@@ -64,7 +64,7 @@
             )
           );
     }
-    /*
+    
     $contact = $pdo -> query("select * from contact where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $contactArray = array();
     foreach($contact as $col){
@@ -97,7 +97,7 @@
       "note" => $dietArray,
       "contact" => $contactArray,
       "notice" => $noticeArray
-    );*/
+    );
     
   }else{
     header("Status-Code:-1");
