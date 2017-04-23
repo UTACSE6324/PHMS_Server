@@ -5,10 +5,14 @@
     google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
-      // Define the chart to be drawn.
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
+	  alert(<?php
+		$token = $token = $_GET['token'];
+		$uid = $pdo -> query("select uid from user where token = '$token';") -> fetch();
+		echo $uid;
+	  ?>);
       data.addRows([
         ['Nitrogen', 0.78],
         ['Oxygen', 0.21],
