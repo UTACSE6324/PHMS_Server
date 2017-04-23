@@ -46,10 +46,10 @@
           }
           $total = $breakfast + $launch + $dinner + $snack;
 
-          echo "['breakfast', $breakfast],";
-          echo "['launch', $launch],";
-          echo "['dinner', $dinner],";
-          echo "['snack', $snack]";
+          echo "['breakfast', $breakfast/$total],";
+          echo "['launch', $launch/$total],";
+          echo "['dinner', $dinner/$total],";
+          echo "['snack', $snack/$total]";
         ?>
       ]);
 
