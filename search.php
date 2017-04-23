@@ -9,10 +9,11 @@
 
   echo "????\n";
 
-  /*
+  
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
+  /*
   if(!empty($res)){
     header("Status-Code:1");
     header("summary:Success");
