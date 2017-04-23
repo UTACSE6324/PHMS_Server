@@ -20,6 +20,7 @@
     header("summary:Success");
         
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name = '$key';") -> fetchAll();
+     echo json_encode($med);
     /*
     $medArray = new Array();
     foreach($med as $col){
