@@ -25,7 +25,7 @@
 <body>
   <!-- Identify where the chart should be drawn. -->
   <div id="myPieChart"/>
-  <div style="float:right">
+  <div width='100px' height='100px' style="float:left">
   <?php 
   echo "111";
   $token = $_GET['token'];
