@@ -16,8 +16,6 @@
     header("summary:Success");
     
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '%$key%';") -> fetchAll();
-    echo json_encode($med);
-    /*
     $medArray = array();
     foreach($med as $col){
       array_push($medArray,
@@ -35,7 +33,8 @@
             )
           );
     }
-    
+    echo json_encode($medArray);
+    /*
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $dietArray = array();
     foreach($diet as $col){
