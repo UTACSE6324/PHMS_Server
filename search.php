@@ -19,11 +19,10 @@
   if(!empty($res)){
     header("Status-Code:1");
     header("summary:Success");
-    
+    var_dump($res);
+    /*
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name = '$key';") -> fetchAll();
     $medArray = new Array();
-    var_dump($med);
-    /*
     foreach($med as $col){
       array_push($medArray,
             array(
