@@ -22,6 +22,8 @@
     
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name = '$key';") -> fetchAll();
     $medArray = new Array();
+    var_dump($med);
+    /*
     foreach($med as $col){
       array_push($medArray,
             array(
@@ -38,7 +40,7 @@
             )
           );
     }
-    /*
+    
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name = '$key';") -> fetchAll();
     $dietArray = new Array();
     foreach($diet as $col){
