@@ -10,11 +10,10 @@
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
       data.addRows([
-        <?php
-          echo "['breakfast', 0.78],";
-          echo "['launch', 0.21],";
-          echo "['dinner', 0.01],";
-          echo "['snack', 0.00]";
+          ['breakfast', 0.78],
+          ['launch', 0.21],
+          ['dinner', 0.01],
+          ['snack', 0.00]
         ?>
       ]);
       var chart = new google.visualization.PieChart(document.getElementById('dietPieChart'));
@@ -23,12 +22,12 @@
   </script>
 </head>
 <body>
+  assadasd
+  <div id="dietPieChart"/>
   <?php 
   $token = $_GET['token'];
   $uid = $pdo -> query("select uid from user where token = '$token';") -> fetch(); 
   echo $uid;
   ?>
-  assadasd
-  <div id="dietPieChart"/>
 </body>
 </html>
