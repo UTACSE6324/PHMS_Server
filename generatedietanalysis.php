@@ -23,6 +23,7 @@
   </script>
 </head>
 <body>
+  <!-- Identify where the chart should be drawn. -->
   <div id="myPieChart"/>
 </body>
 </html>
