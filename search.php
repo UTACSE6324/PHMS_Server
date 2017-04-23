@@ -1,13 +1,9 @@
 <?php
   header('content-type:text/html;charset=utf-8');
 
-  echo "????\n";
-
   $uid = $_GET['uid'];
   $token = $_GET['token'];
   $key = $_GET['key'];
-
-  echo "????\n";
 
   
   $arr = array();
@@ -19,7 +15,7 @@
     header("Status-Code:1");
     header("summary:Success");
     
-    $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '$key';") -> fetchAll();
+    $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $medArray = array();
     foreach($med as $col){
       array_push($medArray,
@@ -38,7 +34,7 @@
           );
     }
     
-    $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '$key';") -> fetchAll();
+    $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $dietArray = array();
     foreach($diet as $col){
       array_push($dietArray,
@@ -54,7 +50,7 @@
           );
     }
     
-    $note = $pdo -> query("select * from note where uid = '$uid' and name like '$key';") -> fetchAll();
+    $note = $pdo -> query("select * from note where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $noteArray = array();
     foreach($note as $col){
      array_push($noteArray,
@@ -68,7 +64,7 @@
           );
     }
     
-    $contact = $pdo -> query("select * from contact where uid = '$uid' and name like '$key';") -> fetchAll();
+    $contact = $pdo -> query("select * from contact where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $contactArray = array();
     foreach($contact as $col){
       array_push($contactArray,
@@ -81,7 +77,7 @@
             );
     }
     
-    $notice = $pdo -> query("select * from notice where uid = '$uid' and description like '$key';") -> fetchAll();
+    $notice = $pdo -> query("select * from notice where uid = '$uid' and description like '%$key%';") -> fetchAll();
     $noticeArray = array();
     foreach($notice as $col){
      array_push($noticeArray,
