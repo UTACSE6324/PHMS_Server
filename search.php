@@ -37,7 +37,7 @@
             )
           );
     }
-    /*
+    
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '$key';") -> fetchAll();
     $dietArray = array();
     foreach($diet as $col){
@@ -100,7 +100,7 @@
       "note" => $dietArray,
       "contact" => $contactArray,
       "notice" => $noticeArray
-    );*/
+    );
     
   }else{
     header("Status-Code:-1");
