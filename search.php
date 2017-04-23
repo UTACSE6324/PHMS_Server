@@ -35,6 +35,8 @@
     }
     
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '%$key%';") -> fetchAll();
+    echo json_encode($diet);
+    /*
     $dietArray = array();
     foreach($diet as $col){
       array_push($dietArray,
@@ -49,9 +51,7 @@
             )
           );
     }
-    echo json_encode($dietArray);
     
-    /*
     $note = $pdo -> query("select * from note where uid = '$uid' and name like '%$key%';") -> fetchAll();
     $noteArray = array();
     foreach($note as $col){
