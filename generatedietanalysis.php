@@ -4,30 +4,26 @@
   <script type="text/javascript">
     google.charts.load('current', {packages: ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
+
     function drawChart() {
       // Define the chart to be drawn.
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
       data.addRows([
-          ['breakfast', 0.78],
-          ['launch', 0.21],
-          ['dinner', 0.01],
-          ['snack', 0.00]
-        ?>
+        ['Nitrogen', 0.78],
+        ['Oxygen', 0.21],
+        ['Other', 0.01]
       ]);
-      var chart = new google.visualization.PieChart(document.getElementById('dietPieChart'));
+
+      // Instantiate and draw the chart.
+      var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
       chart.draw(data, null);
     }
   </script>
 </head>
 <body>
-  assadasd
-  <div id="dietPieChart"/>
-  <?php 
-  $token = $_GET['token'];
-  $uid = $pdo -> query("select uid from user where token = '$token';") -> fetch(); 
-  echo $uid;
-  ?>
+  <!-- Identify where the chart should be drawn. -->
+  <div id="myPieChart"/>
 </body>
 </html>
