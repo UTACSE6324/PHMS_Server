@@ -21,7 +21,6 @@
         
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '$key';") -> fetchAll();
     $medArray = array();
-    /*
     foreach($med as $col){
       array_push($medArray,
             array(
@@ -107,7 +106,7 @@
       header("Status-Code:-1");
       header("summary:Insert invalid");
     }
-    */
+
   }else{
     header("Status-Code:-1");
     header("summary:Token out of date");
