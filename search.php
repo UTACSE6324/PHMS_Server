@@ -9,6 +9,7 @@
 
   echo "????\n";
 
+/*
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
@@ -111,7 +112,5 @@
   }
   
   echo json_encode($arr);
-
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+  */
 ?>
