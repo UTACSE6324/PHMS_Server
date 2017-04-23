@@ -9,15 +9,14 @@
 
   echo "????\n";
 
-  
+  /*
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   if(!empty($res)){
     header("Status-Code:1");
     header("summary:Success");
-    
-    /*    
+        
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name = '$key';") -> fetchAll();
     $medArray = new Array();
     foreach($med as $col){
@@ -99,7 +98,7 @@
       "note" => $dietArray,
       "contact" => $contactArray,
       "notice" => $noticeArray
-    );*/
+    );
     
     }else{
       header("Status-Code:-1");
@@ -112,5 +111,5 @@
   }
   
   echo json_encode($arr);
-  
+  */
 ?>
