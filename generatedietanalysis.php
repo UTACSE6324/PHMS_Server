@@ -23,7 +23,11 @@
   </script>
 </head>
 <body>
-  <?php echo ">>>>>>"; ?>
+  <?php 
+  $token = $_GET['token'];
+  $uid = $pdo -> query("select uid from user where token = '$token';") -> fetch(); 
+  echo $uid;
+  ?>
   assadasd
   <div id="dietPieChart"/>
 </body>
