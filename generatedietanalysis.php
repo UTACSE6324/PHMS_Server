@@ -59,6 +59,7 @@
   </script>
 </head>
 <body>
+  assadasd
   <div id="dietPieChart"/>
 </body>
 </html>
