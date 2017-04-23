@@ -18,7 +18,7 @@
     
     header("Status-Code:1");
     header("summary:Success");
-    /*
+    
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '$key';") -> fetchAll();
     $medArray = array();
     foreach($med as $col){
@@ -37,7 +37,7 @@
             )
           );
     }
-    
+    /*
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '$key';") -> fetchAll();
     $dietArray = array();
     foreach($diet as $col){
@@ -102,11 +102,6 @@
       "notice" => $noticeArray
     );*/
     
-    }else{
-      header("Status-Code:-1");
-      header("summary:Insert invalid");
-    }
-
   }else{
     header("Status-Code:-1");
     header("summary:Token out of date");
