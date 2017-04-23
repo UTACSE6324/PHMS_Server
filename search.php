@@ -15,7 +15,7 @@
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
 
   if(!empty($res)){
-    /*
+    
     header("Status-Code:1");
     header("summary:Success");
         
@@ -37,7 +37,7 @@
             )
           );
     }
-    
+    /*
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name = '$key';") -> fetchAll();
     $dietArray = new Array();
     foreach($diet as $col){
