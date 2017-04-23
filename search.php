@@ -20,7 +20,7 @@
     header("summary:Success");
         
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '$key';") -> fetchAll();
-    $medArray = new Array();
+    $medArray = array();
     /*
     foreach($med as $col){
       array_push($medArray,
@@ -40,7 +40,7 @@
     }
     
     $diet = $pdo -> query("select * from diethstory where uid = '$uid' and name like '$key';") -> fetchAll();
-    $dietArray = new Array();
+    $dietArray = array();
     foreach($diet as $col){
       array_push($dietArray,
             array(
@@ -56,7 +56,7 @@
     }
     
     $note = $pdo -> query("select * from note where uid = '$uid' and name like '$key';") -> fetchAll();
-    $noteArray = new Array();
+    $noteArray = array();
     foreach($note as $col){
      array_push($noteArray,
             array(
@@ -70,7 +70,7 @@
     }
     
     $contact = $pdo -> query("select * from contact where uid = '$uid' and name like '$key';") -> fetchAll();
-    $contactArray = new Array();
+    $contactArray = array();
     foreach($contact as $col){
       array_push($contactArray,
               array(
@@ -83,7 +83,7 @@
     }
     
     $notice = $pdo -> query("select * from notice where uid = '$uid' and description like '$key';") -> fetchAll();
-    $noticeArray = new Array();
+    $noticeArray = array();
     foreach($notice as $col){
      array_push($noticeArray,
             array(
