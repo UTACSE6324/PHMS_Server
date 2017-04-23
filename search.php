@@ -16,6 +16,8 @@
     header("summary:Success");
     
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name like '%$key%';") -> fetchAll();
+    echo $med;
+    /*
     $medArray = array();
     foreach($med as $col){
       array_push($medArray,
@@ -96,7 +98,7 @@
       "note" => $dietArray,
       "contact" => $contactArray,
       "notice" => $noticeArray
-    );
+    );*/
     
   }else{
     header("Status-Code:-1");
