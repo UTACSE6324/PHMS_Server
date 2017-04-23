@@ -1,6 +1,7 @@
 <?php
   header('content-type:text/html;charset=utf-8');
-  
+  error_reporting(E_ALL);
+  ini_set('display_errors', '1');
   $uid = $_GET['uid'];
   $token = $_GET['token'];
   $key = $_GET['key'];
@@ -87,7 +88,7 @@
           );
     }
     
-    echo array(
+    $arr = array(
       "medicine" => $medArray,
       "diet" => $dietArray,
       "note" => $dietArray,
@@ -107,4 +108,7 @@
   }
   
   echo json_encode($arr);
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 ?>
