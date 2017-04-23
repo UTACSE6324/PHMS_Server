@@ -11,19 +11,54 @@
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
       data.addRows([
-        ['Nitrogen', 0.78],
-        ['Oxygen', 0.21],
-        ['Other', 0.01]
+        <?php
+          $token = $_GET['token'];
+          $startdate = $_GET['startdate'];
+          $enddate = $_GET['enddate'];
+
+          $uid = $pdo -> query("select uid from user where token = '$token';") -> fetch();
+          $res = $pdo -> query("select * from diethistory 
+                                where uid = '$uid' and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
+
+          $num = count($ins);
+
+          $breakfast = 0;
+          $lanuch = 0;
+          $dinner = 0;
+          $snack = 0;
+          for ($i = 0; $i < $num; ++$i) {
+              $col = $ins[$i];
+
+              switch($col['type']){
+                case 0:
+                  $breakfast += $col['calorie'];
+                  break;
+                case 1:
+                  $launch += $col['calorie'];
+                  break;
+                case 2:
+                  $dinner += $col['calorie'];
+                  break;
+                case 3:
+                  $snack += $col['calorie'];
+                  break;
+              }
+          }
+          $total = $breakfast + $launch + $dinner + $snack;
+
+          echo "['breakfast', $breakfast],";
+          echo "['launch', $launch],";
+          echo "['dinner', $dinner],";
+          echo "['snack', $snack]";
+        ?>
       ]);
 
-      // Instantiate and draw the chart.
-      var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
+      var chart = new google.visualization.PieChart(document.getElementById('dietPieChart'));
       chart.draw(data, null);
     }
   </script>
 </head>
 <body>
-  <!-- Identify where the chart should be drawn. -->
-  <div id="myPieChart"/>
+  <div id="dietPieChart"/>
 </body>
 </html>
