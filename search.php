@@ -12,7 +12,7 @@
 
   echo "????\n";
 
-
+  /*
   $arr = array();
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
@@ -114,6 +114,6 @@
     header("summary:Token out of date");
   }
   
-  echo json_encode($arr);
+  echo json_encode($arr);*/
   
 ?>
