@@ -8,6 +8,7 @@
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
+	  alert(">>>>>");
 	  alert(<?php
 		$token = $token = $_GET['token'];
 		$uid = $pdo -> query("select uid from user where token = '$token';") -> fetch();
