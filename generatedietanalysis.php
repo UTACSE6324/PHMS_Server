@@ -1,38 +1,25 @@
-<html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      // Define the chart to be drawn.
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Element');
-      data.addColumn('number', 'Percentage');
-      data.addRows([
-        ['Nitrogen', 0.78],
-        ['Oxygen', 0.21],
-        ['Other', 0.01]
-      ]);
-
-      // Instantiate and draw the chart.
-      var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
-      chart.draw(data, null);
-    }
-  </script>
-</head>
-<body>
-  <!-- Identify where the chart should be drawn. -->
-  <div id="myPieChart"/>
-  <div width='100px' height='100px' style="float:left">
-  <?php 
-  echo "111";
-  $token = $_GET['token'];
-  echo "222";
-  $uid = $pdo -> query("select uid from user where token = '$token';") -> fetch(); 
-  echo $uid;
-  ?>
-  </div>
-</body>
-</html>
+<?php
+	echo "<html>";
+	echo "<head>";
+	echo "<script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>";
+	echo "<script type='text/javascript'>";
+	echo "google.charts.load('current', {packages: ['corechart']});";
+	echo "google.charts.setOnLoadCallback(drawChart);"
+	echo "function drawChart() {
+			  var data = new google.visualization.DataTable();
+			  data.addColumn('string', 'Element');
+			  data.addColumn('number', 'Percentage');
+			  data.addRows([
+				['Nitrogen', 0.78],
+				['Oxygen', 0.21],
+				['Other', 0.01]
+			  ]);
+			  var chart = new google.visualization.PieChart(document.getElementById('dietPieChart'));
+			  chart.draw(data, null);
+		}";
+	echo "</script>"
+	echo "</head>";
+	echo "<body>";
+	echo "</body>";
+	echo "</html>";
+?>
