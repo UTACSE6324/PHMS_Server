@@ -16,7 +16,7 @@
   if(!empty($res)){
     header("Status-Code:1");
     header("summary:Success");
-    echo $res;
+    
     /*    
     $med = $pdo -> query("select * from medicine where uid = '$uid' and name = '$key';") -> fetchAll();
     $medArray = new Array();
