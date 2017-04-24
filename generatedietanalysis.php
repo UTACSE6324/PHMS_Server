@@ -5,7 +5,8 @@
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
-      var res = <?php
+      var res = 
+      <?php
         $uid = $_GET['uid'];
         $startdate = $_GET['startdate'];
         $enddate = $_GET['enddate'];
@@ -57,7 +58,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
        
-        document.getElementById('test').innerHTML = res;
+        document.getElementById('test').innerHTML = res[0].name;
       }
     </script>
   </head>
