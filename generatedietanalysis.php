@@ -46,6 +46,6 @@
 
   <body>
     <div id="chart_div"></div>
-    <div id="test"></div>
+    <div id="test" style="background-color:#787878; width:100%; height:50px;"></div>
   </body>
 </html>
