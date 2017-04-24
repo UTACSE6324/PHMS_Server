@@ -19,4 +19,6 @@
   $message .= "http://phms.jarviszhang.com/generatedietanalysis.php?uid='$uid'&startdate='$startdate'&enddate='$enddate'";
 
   mail($to,$subject,$message,$headers); 
+
+  echo "Success";
 ?>
