@@ -70,9 +70,37 @@
                        'width':400,
                        'height':300};
         
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_div'));
         chart.draw(data, options);
        
+        
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('date', 'Date');
+        data1.addColumn('number', 'Calories');
+        
+        var dataArray = new Array();
+        for (var i=0; i < res.length; i++){
+          var year = parseInt(res[i].date.substring(0,3));
+          var month = parseInt(res[i].date.substring(5,6));
+          var day = parseInt(res[i].date.substring(8,9));
+          var calorie = parseInt(res[i].calorie);
+          
+          dataArray.push(
+              new Array(new Date(year, month, day),calorie)
+          );
+        }
+        
+        data1.addRows(dataArray);
+
+        var chart1 = new google.visualization.AnnotationChart(document.getElementById('chart_div'));
+
+        var options1 = {
+          displayAnnotations: true
+        };
+
+        chart1.draw(data1, options1);
+        
+        
         var section = "";
         var total = 0;
         
@@ -109,7 +137,10 @@
   </head>
 
   <body>
-    <div id="chart_div"></div>
+    <div>
+      <div id="piechart_div"></div>
+      <div id="linechart_div"></div>
+    </div>
     <div id="diet_table"></div>
   </body>
 </html>
