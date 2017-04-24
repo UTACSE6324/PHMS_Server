@@ -56,6 +56,8 @@
           }
         }
     
+        document.getElementById('test').innerHTML=breakfast+launch+dinner+snack;
+        
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
