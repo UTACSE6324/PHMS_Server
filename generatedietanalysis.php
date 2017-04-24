@@ -13,7 +13,7 @@
         $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
         $res = $pdo -> query("select * from diethistory where uid = '$uid' 
             and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
-        echo implode($res);
+        echo ($res);
       ?>;
       
       function drawChart() {
@@ -40,7 +40,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
         
-        document.getElementById('test').innerHTML = res;
+        document.getElementById('test').innerHTML = res.join();
       }
     </script>
   </head>
