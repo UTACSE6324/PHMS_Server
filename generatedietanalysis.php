@@ -20,7 +20,6 @@
         foreach($res as $col){
           array_push($arr,
             array(
-              "dietid" => $col['dietid'],
               "date" => $col['date'],
               "type" => $col['type'],
               "name" => $col['name'],
@@ -35,12 +34,28 @@
       ?>;
       
       function drawChart() {
-       
-        var breakfast = <?php echo "3"; ?>;
-        var launch = <?php echo "3"; ?>;
-        var dinner = <?php echo "3"; ?>;
-        var snack = <?php echo "3"; ?>;
+        var breakfast = 0;
+        var launch = 0;
+        var dinner = 0;
+        var snack = 0;
         
+        for (var i = res.length; i–-;) {
+          switch(res[i].type){
+            case 0:
+              breakfast += res[i].calorie;
+              break;
+            case 1:
+              launch += res[i].calorie;
+              break;
+            case 2:
+              dinner += res[i].calorie;
+              break;
+            case 3:
+              snack += res[i].calorie;
+              break;
+          }
+        }
+    
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
@@ -58,7 +73,6 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
        
-        document.getElementById('test').innerHTML = res[0].name;
       }
     </script>
   </head>
