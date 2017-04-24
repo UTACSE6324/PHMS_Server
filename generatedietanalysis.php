@@ -1,58 +1,46 @@
 <html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-	var pieArray = new Array(
-		<?php
-			$token = $token = $_GET['token'];
-			$uid = $pdo -> query("select uid from user where token = '$token';") -> fetch();
-			$res = $pdo -> query("select * from diethistory 
-                                where uid = '$uid' and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
-            $num = count($ins);
-            $breakfast = 0;
-            $lanuch = 0;
-            $dinner = 0;
-            $snack = 0;
-		    for ($i = 0; $i < $num; ++$i) {
-			  $col = $ins[$i];
-			  switch($col['type']){
-				case 0:
-				  $breakfast += $col['calorie'];
-				  break;
-				case 1:
-				  $launch += $col['calorie'];
-				  break;
-				case 2:
-				  $dinner += $col['calorie'];
-				  break;
-				case 3:
-				  $snack += $col['calorie'];
-				  break;
-			  }
-            }
-            $total = $breakfast + $launch + $dinner + $snack;
-   	    echo "$breakfast/$total,$launch/$total,$dinner/$total,$snack/$total"; 
-	    ?>
-	);
-	
-	google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Element');
-      data.addColumn('number', 'Percentage');
-      data.addRows([
-        ['Breakfast', pieArray[0]],
-        ['Launch', pieArray[1]],
-        ['Dinner', pieArray[2]],
-	['Snack', pieArray[3]]
-      ]);
-      var chart = new google.visualization.PieChart(document.getElementById('dietPieChart'));
-      chart.draw(data, null);
-    }
-  </script>
-</head>
-<body>
-  <div id="dietPieChart"/>
-</body>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+  </body>
 </html>
