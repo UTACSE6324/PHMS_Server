@@ -40,7 +40,7 @@
         var snack = 0;
         
         for (var i=0; i < res.length; i++) {
-            document.write(i);
+            document.write(res[i].type);
         }
         
         var data = new google.visualization.DataTable();
