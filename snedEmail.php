@@ -2,7 +2,6 @@
   header('content-type:text/html;charset=utf-8');
   
   $uid = $_GET['uid'];
-  $token = $_GET['token'];
   $email = $_GET['email'];
   $startdate = $_GET['startdate'];
   $enddate = $_GET['enddate'];
