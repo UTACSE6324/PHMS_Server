@@ -143,6 +143,7 @@
   </head>
 
   <body>
+    <img src="http://phms.jarviszhang.com/img/page_head.png" style='width:100%'/>
     <div>
       <div id="piechart_div" style='float:left; width:30%; height:300px;'></div>
       <div id="linechart_div" style='float:right; width:70%; height:300px;'></div>
