@@ -90,7 +90,7 @@
     $message .= '</div>';
     $message .= '</body></html>';
     
-    if($cid != 0 && $notify == 1){
+    if($cid != 0 && $notify == 1 && $id1 != null && id2 != null){
       $email = $pdo -> query("select email from contact where cid = '$cid'")->fetch()['email'];
       
       $to = $email;
