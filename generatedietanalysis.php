@@ -66,9 +66,7 @@
           ['Snack', snack]
         ]);
 
-        var options = {'title':'Percentage of intake',
-                       'width':400,
-                       'height':300};
+        var options = {'title':'Percentage of intake'};
         
         var chart = new google.visualization.PieChart(document.getElementById('piechart_div'));
         chart.draw(data, options);
@@ -144,8 +142,8 @@
 
   <body>
     <div>
-      <div id="piechart_div"></div>
-      <div id="linechart_div" style='width: 900px; height: 500px;'></div>
+      <div id="piechart_div" style='float:left; width:30%; height:300px;'></div>
+      <div id="linechart_div" style='float:right; width:70%; height:300px;'></div>
     </div>
     <div id="diet_table"></div>
   </body>
