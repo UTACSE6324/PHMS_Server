@@ -17,7 +17,7 @@
       ?>;
       
       function drawChart() {
-        document.getElementById('test').innerHTML = res;
+       
         var breakfast = <?php echo "3"; ?>;
         var launch = <?php echo "3"; ?>;
         var dinner = <?php echo "3"; ?>;
@@ -39,6 +39,8 @@
         
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
+        
+        document.getElementById('test').innerHTML = res;
       }
     </script>
   </head>
