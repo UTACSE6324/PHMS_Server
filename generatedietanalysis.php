@@ -40,7 +40,20 @@
         var snack = 0;
         
         for (var i=0; i < res.length; i++) {
-            document.write(res[i].type);
+            switch(res[i].type){
+              case 0:
+                document.write("AAAA");
+                break;
+              case 1:
+                document.write("BBBB");
+                break;
+              case 2:
+                document.write("CCCC");
+                break;
+              case 3:
+                document.write("DDDD");
+                break;
+            }        
         }
         
         var data = new google.visualization.DataTable();
