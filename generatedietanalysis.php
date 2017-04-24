@@ -5,6 +5,18 @@
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
+      var res = <?php
+        $uid = $_GET['uid'];
+        $startdate = $_GET['startdate'];
+        $enddate = $_GET['enddate'];
+      
+        $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
+        $res = $pdo -> query("select * from diethistory where uid = '$uid' 
+            and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
+        echo $res;
+      ?>;
+      document.getElementById('chart_div').innerHtml = res;
+      
       function drawChart() {
 
         var breakfast = <?php echo "3"; ?>;
@@ -34,5 +46,6 @@
 
   <body>
     <div id="chart_div"></div>
+    <div id="test"></div>
   </body>
 </html>
