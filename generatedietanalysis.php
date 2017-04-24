@@ -42,16 +42,16 @@
         for (var i=0; i < res.length; i++) {
             switch(res[i].type){
               case '0':
-                breakfast += res[i].calorie;
+                breakfast += parseInt(res[i].calorie);
                 break;
               case '1':
-                launch += res[i].calorie;
+                launch += parseInt(res[i].calorie);
                 break;
               case '2':
-                dinner += res[i].calorie;
+                dinner += parseInt(res[i].calorie);
                 break;
               case '3':
-                snack += res[i].calorie;
+                snack += parseInt(res[i].calorie);
                 break;
             }        
         }
