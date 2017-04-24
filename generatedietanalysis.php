@@ -40,7 +40,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
         
-        document.getElementById('test').innerHTML = res.join();
+        document.getElementById('test').innerHTML = res;
       }
     </script>
   </head>
