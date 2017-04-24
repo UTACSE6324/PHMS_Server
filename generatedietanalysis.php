@@ -13,7 +13,7 @@
         $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
         $res = $pdo -> query("select * from diethistory where uid = '$uid' 
             and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
-        echo json_encode($res);
+        echo htmlspecialchars(json_encode($res));
       ?>;
       
       function drawChart() {
