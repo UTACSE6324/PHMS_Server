@@ -17,7 +17,7 @@
       ?>;
       
       function drawChart() {
-document.getElementById('chart_div').innerHtml = res;
+document.getElementById('chart_div').innerHtml = "????";
         var breakfast = <?php echo "3"; ?>;
         var launch = <?php echo "3"; ?>;
         var dinner = <?php echo "3"; ?>;
