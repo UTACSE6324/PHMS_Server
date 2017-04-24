@@ -90,7 +90,7 @@
           );
         }
         data1.addRows(dataArray);
-
+        /*
         var chart1 = new google.visualization.AnnotationChart(document.getElementById('linechart_div'));
 
         var options1 = {
@@ -98,7 +98,7 @@
         };
 
         chart1.draw(data1, options1);
-        
+        */
         
         var section = "";
         var total = 0;
