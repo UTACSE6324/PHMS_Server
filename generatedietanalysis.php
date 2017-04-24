@@ -98,7 +98,7 @@
           }
         }
         dataArray.push(newArray);
-        
+        document.write(dataArray);
         data1.addRows(dataArray);
         
         var chart1 = new google.visualization.AnnotationChart(document.getElementById('linechart_div'));
