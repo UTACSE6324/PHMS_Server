@@ -74,7 +74,7 @@
         var section = "";
         var total = 0;
         
-        section += "<table rules='all' width= '90%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
+        section += "<table rules='all' width= '90%' style='margin:10px; padding: 10px; border-color: #666;' cellpadding='10'>";
         
         section += "<tr style='background: #eee;'><td>Date</td><td>Type</td><td>Name</td><td>Quantity</td><td>Calorie</td></tr>";
         for (var i=0; i < res.length; i++){
