@@ -19,5 +19,5 @@
 
   mail($to,$subject,$message,$headers); 
 
-  echo $uid.$email.$startdate.$enddate;
+  echo "Success";
 ?>
