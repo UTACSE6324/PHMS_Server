@@ -81,9 +81,9 @@
         var dataArray = new Array();
         var newArray,flag;
         for (var i=0; i < res.length; i++){
-          var year = parseInt(res[i].date.substring(0,3));
-          var month = parseInt(res[i].date.substring(5,6));
-          var day = parseInt(res[i].date.substring(8,9));
+          var year = parseInt(res[i].date.substring(0,4));
+          var month = parseInt(res[i].date.substring(5,7));
+          var day = parseInt(res[i].date.substring(8,10));
           var calorie = parseInt(res[i].calorie);
           
           if(flag != null && flag==day){
