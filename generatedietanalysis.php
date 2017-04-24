@@ -33,7 +33,7 @@
           ['Snack', snack]
         ]);
 
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Percentage of intake',
                        'width':400,
                        'height':300};
         
@@ -43,7 +43,7 @@
         var data = "";
         
         for (var i = res.length; i–-;) {
-          data += res[i][0];
+          data += res[i];
         }
         document.getElementById('test').innerHTML = data;
       }
