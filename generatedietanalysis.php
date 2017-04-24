@@ -15,10 +15,9 @@
             and date >= '$startdate' and date <= '$enddate';") -> fetchAll();
         echo $res;
       ?>;
-      document.getElementById('chart_div').innerHtml = res;
       
       function drawChart() {
-
+document.getElementById('chart_div').innerHtml = res;
         var breakfast = <?php echo "3"; ?>;
         var launch = <?php echo "3"; ?>;
         var dinner = <?php echo "3"; ?>;
