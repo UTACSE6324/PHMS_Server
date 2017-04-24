@@ -143,8 +143,8 @@
   <body>
     <div>
       <div id="piechart_div" style='float:left; width:30%; height:300px;'></div>
-      <div id="linechart_div" style='background-color:#eee; float:right; width:70%; height:300px;'></div>
+      <div id="linechart_div" style='float:right; width:70%; height:300px;'></div>
     </div>
-    <div id="diet_table"></div>
+    <div id="diet_table" style='margin-top:10px'></div>
   </body>
 </html>
