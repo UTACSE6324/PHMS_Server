@@ -89,7 +89,7 @@
               new Array(new Date(year, month, day),calorie)
           );
         }
-        
+        document.write(dataArray);
         data1.addRows(dataArray);
 
         var chart1 = new google.visualization.AnnotationChart(document.getElementById('chart_div'));
