@@ -95,7 +95,7 @@
           }
         }
         dataArray.push(newArray);
-        document.write(dataArray);
+        
         var data1 = new google.visualization.DataTable();
         data1.addColumn('date', 'Date');
         data1.addColumn('number', 'Calories');
