@@ -39,23 +39,8 @@
         var dinner = 0;
         var snack = 0;
         
-        for (var i = res.length; i–-;) {
-          document.write(i+"\n");
-          document.write(res[i].type+"\n");
-          switch(res[i].type){
-            case 0:
-              breakfast += res[i].calorie;
-              break;
-            case 1:
-              launch += res[i].calorie;
-              break;
-            case 2:
-              dinner += res[i].calorie;
-              break;
-            case 3:
-              snack += res[i].calorie;
-              break;
-          }
+        for (var i=0; i < res.length; i++) {
+            document.write(i);
         }
         
         var data = new google.visualization.DataTable();
