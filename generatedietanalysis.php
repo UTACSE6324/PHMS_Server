@@ -79,7 +79,7 @@
         var newArray,flag;
         for (var i=0; i < res.length; i++){
           var year = parseInt(res[i].date.substring(0,4));
-          var month = parseInt(res[i].date.substring(5,7));
+          var month = parseInt(res[i].date.substring(5,7)) - 1;
           var day = parseInt(res[i].date.substring(8,10));
           var calorie = parseInt(res[i].calorie);
           
