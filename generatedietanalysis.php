@@ -148,7 +148,7 @@
   <body>
     <div>
       <div id="piechart_div"></div>
-      <div id="linechart_div"></div>
+      <div id="linechart_div" style='width: 900px; height: 500px;'></div>
     </div>
     <div id="diet_table"></div>
   </body>
