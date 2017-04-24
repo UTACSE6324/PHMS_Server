@@ -79,18 +79,28 @@
         data1.addColumn('number', 'Calories');
         
         var dataArray = new Array();
+        var newArray,flag;
         for (var i=0; i < res.length; i++){
           var year = parseInt(res[i].date.substring(0,3));
           var month = parseInt(res[i].date.substring(5,6));
           var day = parseInt(res[i].date.substring(8,9));
           var calorie = parseInt(res[i].calorie);
           
-          dataArray.push(
-              new Array(new Date(year, month, day),calorie)
-          );
+          if(flag != null && flag==day){
+            newArray.calorie += calorie;
+          }else{
+            if(flag!=null)
+                dataArray.push(newArray);
+            newArray = new Array();
+            newArray.push(new Date(year, month, day));
+            newArray.push(calorie);
+            flag = day;
+          }
         }
+        dataArray.push(newArray);
+        
         data1.addRows(dataArray);
-        /*
+        
         var chart1 = new google.visualization.AnnotationChart(document.getElementById('linechart_div'));
 
         var options1 = {
@@ -98,7 +108,7 @@
         };
 
         chart1.draw(data1, options1);
-        */
+        
         
         var section = "";
         var total = 0;
