@@ -130,8 +130,6 @@
         data1.addColumn('number', 'Calories');
         data1.addRows(dataArray);
         
-        document.write(JSON.stringify(dataArray));
-        
         var chart1 = new google.visualization.AnnotationChart(document.getElementById('linechart_div'));
         var options1 = {
           displayAnnotations: true
