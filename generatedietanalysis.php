@@ -75,11 +75,14 @@
        
         var section = "";
         section += "<table rules='all' width= '80%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
+        
         section += "<tr style='background: #eee;'><td>Date</td><td>Type</td><td>Name</td><td>Quantity</td><td>Calorie</td></tr>";
         for (var i=0; i < res.length; i++){
           section += "<tr><td>"+res[i].date+"</td><td>"+res[i].type+"</td>"
                       +res[i].name+"<td>"+res[i].quantity+"</td><td>"+res[i].calorie+"</td></tr>";
         }
+        
+        section += "</table>";
         
         document.getElementById('diet_table').innerHTML = section;
       }
@@ -88,6 +91,6 @@
 
   <body>
     <div id="chart_div"></div>
-    <table id="diet_table"></table>
+    <div id="diet_table"></div>
   </body>
 </html>
