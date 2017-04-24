@@ -40,7 +40,8 @@
         var snack = 0;
         
         for (var i = res.length; i–-;) {
-          alert(res[i].type);
+          document.write(i+"\n");
+          document.write(res[i].type+"\n");
           switch(res[i].type){
             case 0:
               breakfast += res[i].calorie;
@@ -56,8 +57,6 @@
               break;
           }
         }
-    
-        document.getElementById('test').innerHTML=breakfast+launch+dinner+snack;
         
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
