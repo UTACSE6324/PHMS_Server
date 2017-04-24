@@ -74,10 +74,7 @@
         chart.draw(data, options);
        
         
-        var data1 = new google.visualization.DataTable();
-        data1.addColumn('date', 'Date');
-        data1.addColumn('number', 'Calories');
-        
+      
         var dataArray = new Array();
         var newArray,flag;
         for (var i=0; i < res.length; i++){
@@ -98,11 +95,13 @@
           }
         }
         dataArray.push(newArray);
-        
+        document.write(dataArray);
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('date', 'Date');
+        data1.addColumn('number', 'Calories');
         data1.addRows(dataArray);
         
         var chart1 = new google.visualization.AnnotationChart(document.getElementById('linechart_div'));
-
         var options1 = {
           displayAnnotations: true
         };
