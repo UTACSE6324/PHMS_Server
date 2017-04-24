@@ -42,6 +42,7 @@
         for (var i=0; i < res.length; i++) {
             switch(res[i].type){
               case '0':
+                breakfast += res[i].calorie;
                 document.write("AAAA");
                 break;
               case '1':
