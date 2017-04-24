@@ -39,13 +39,8 @@
         
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-        
-        var data = "";
-        
-        for (var i = res.length; i–-;) {
-          data += res[i];
-        }
-        document.getElementById('test').innerHTML = data;
+       
+        document.getElementById('test').innerHTML = res;
       }
     </script>
   </head>
