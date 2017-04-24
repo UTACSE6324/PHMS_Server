@@ -43,16 +43,15 @@
             switch(res[i].type){
               case '0':
                 breakfast += res[i].calorie;
-                document.write("AAAA");
                 break;
               case '1':
-                document.write("BBBB");
+                launch += res[i].calorie;
                 break;
               case '2':
-                document.write("CCCC");
+                dinner += res[i].calorie;
                 break;
               case '3':
-                document.write("DDDD");
+                snack += res[i].calorie;
                 break;
             }        
         }
