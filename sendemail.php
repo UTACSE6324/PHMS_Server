@@ -15,7 +15,7 @@
   $subject = "Medicine Conflicts Notice";
   
   $message = "Click to see the diet analysis from user : \n";
-  $message .= "http://phms.jarviszhang.com/generatedietanalysis.php?uid='$uid'&startdate='$startdate'&enddate='$enddate'";
+  $message .= "http://phms.jarviszhang.com/generatedietanalysis.php?uid=$uid&startdate=$startdate&enddate=$enddate";
 
   mail($to,$subject,$message,$headers); 
 
