@@ -40,6 +40,7 @@
         var snack = 0;
         
         for (var i = res.length; i–-;) {
+          alert(res[i].type);
           switch(res[i].type){
             case 0:
               breakfast += res[i].calorie;
