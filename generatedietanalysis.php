@@ -92,7 +92,7 @@
             if(flag!=null)
                 dataArray.push(newArray);
             newArray = new Array();
-            newArray.push(new Date(year, month, day));
+            newArray.push(new Array(year, month, day));
             newArray.push(calorie);
             flag = day;
           }
