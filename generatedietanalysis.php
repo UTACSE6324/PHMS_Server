@@ -73,8 +73,39 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart_div'));
         chart.draw(data, options);
        
+        var section = "";
+        var total = 0;
         
-      
+        section += "<table rules='all' width= '90%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
+        
+        section += "<tr style='background: #eee;'><td>Date</td><td>Type</td><td>Name</td><td>Quantity</td><td>Calorie</td></tr>";
+        for (var i=0; i < res.length; i++){
+          var type;
+          switch(res[i].type){
+              case '0':
+                type = "breakfast";
+                break;
+              case '1':
+                type = "launch";
+                break;
+              case '2':
+                type = "dinner";
+                break;
+              case '3':
+                type = "snack";
+                break;
+            }      
+          total += parseInt(res[i].calorie);
+          section += "<tr><td>"+res[i].date+"</td><td>"+type+"</td><td>"
+                      +res[i].name+"</td><td>"+res[i].quantity+"</td><td>"+res[i].calorie+"</td></tr>";
+        }
+        average = total / 30;
+        section += "<tr><td colspan='3'>Total : "+total+"</td><td colspan='2'>Average : "+average+"</td></tr>";
+        section += "</table>";
+        
+        document.getElementById('diet_table').innerHTML = section;
+        
+        
         var dataArray = new Array();
         var newArray,flag;
         for (var i=0; i < res.length; i++){
@@ -107,39 +138,6 @@
         };
 
         chart1.draw(data1, options1);
-        
-        
-        var section = "";
-        var total = 0;
-        
-        section += "<table rules='all' width= '90%' style='margin:20px; padding: 10px; border-color: #666;' cellpadding='10'>";
-        
-        section += "<tr style='background: #eee;'><td>Date</td><td>Type</td><td>Name</td><td>Quantity</td><td>Calorie</td></tr>";
-        for (var i=0; i < res.length; i++){
-          var type;
-          switch(res[i].type){
-              case '0':
-                type = "breakfast";
-                break;
-              case '1':
-                type = "launch";
-                break;
-              case '2':
-                type = "dinner";
-                break;
-              case '3':
-                type = "snack";
-                break;
-            }      
-          total += parseInt(res[i].calorie);
-          section += "<tr><td>"+res[i].date+"</td><td>"+type+"</td><td>"
-                      +res[i].name+"</td><td>"+res[i].quantity+"</td><td>"+res[i].calorie+"</td></tr>";
-        }
-        average = total / 30;
-        section += "<tr><td colspan='3'>Total : "+total+"</td><td colspan='2'>Average : "+average+"</td></tr>";
-        section += "</table>";
-        
-        document.getElementById('diet_table').innerHTML = section;
       }
     </script>
   </head>
