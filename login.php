@@ -25,7 +25,8 @@
       'bp' => $res['bp'],
       'bsl' => $res['bsl'],
       'chol' => $res['chol'],
-      'calorie' => $res['calorie']
+      'calorie' => $res['calorie'],
+      'notify' => $res['notify']
     );
     
     $ins = $pdo -> exec("update user set token = '$token' where email = '$email'");
