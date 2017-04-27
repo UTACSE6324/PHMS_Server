@@ -12,7 +12,7 @@
   $headers .= "CC: $from\r\n";
   $headers .= "MIME-Version: 1.0\r\n";
   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-  $subject = "Medicine Conflicts Notice";
+  $subject = "User Diet Analysis";
   
   $message = "Click to see the diet analysis from user : \n";
   $message .= "http://phms.jarviszhang.com/generatedietanalysis.php?uid=$uid&startdate=$startdate&enddate=$enddate";
