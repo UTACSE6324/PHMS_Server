@@ -37,7 +37,8 @@
         'password' => $res['password'],
         'sq' => $res['sq'],
         'sqanswer' => $res['sqanswer'],
-        'token' => $res['token']
+        'token' => $res['token'],
+        'notify' => '1'
       );
       echo json_encode($arr);
     }else{
