@@ -11,6 +11,8 @@
   $instructions = $_GET['instructions'];
   
   $name = str_replace("'","\'",$name);
+  $unit = str_replace("'","\'",$unit);
+  $instructions = str_replace("'","\'",$instructions);
     
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
