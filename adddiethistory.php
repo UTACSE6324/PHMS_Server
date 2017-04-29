@@ -43,6 +43,8 @@
     $apiRes = file_get_contents($url);
     $apiRes = json_decode($apiRes, true);
     
+    echo $apiRes;
+    
     $fat = $apiRes['foods'][0]['nf_total_fat'];
     $protein = $apiRes['foods'][0]['nf_protein'];
     $carbohydrate = $apiRes['foods'][0]['nf_total_carbohydrate'];
