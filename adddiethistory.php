@@ -38,10 +38,11 @@
     $dietid = $pdo->lastInsertId();
     
     $apiID = $_GET['apiid'];
-    echo $apiID."\n";
+    echo "\n".$apiID."\n";
     $url='https://trackapi.nutritionix.com/v2/search/item?
             x-app-key=8aa879546b2064de87ebc15334754bab&x-app-id=b871bf7e&nix_item_id='.$apiID;
     $apiRes = file_get_contents($url);
+    echo "\n".$apiRes."\n";
     $apiRes = json_decode($apiRes, true);
    
     
