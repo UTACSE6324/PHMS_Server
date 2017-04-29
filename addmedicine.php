@@ -10,6 +10,7 @@
   $unit = $_GET['unit'];
   $instructions = $_GET['instructions'];
   
+  $name = str_replace("'","\'",$name);
     
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
