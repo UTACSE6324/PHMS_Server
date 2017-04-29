@@ -53,7 +53,7 @@
                     where dietid=$dietid");
     
   }catch(Exception $e){
-    echo 'error\n';
+    echo json_encode($pdo->errorInfo());
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 ?>
