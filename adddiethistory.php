@@ -51,6 +51,7 @@
                     where dietid=$dietid");
     
   }catch(Exception $e){
+    echo 'error\n';
     echo 'Caught exception: ',  $e->getMessage(), "\n";
   }
 ?>
