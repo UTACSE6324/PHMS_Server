@@ -29,7 +29,10 @@
               "name" => $col['name'],
               "quantity" => $col['quantity'],
               "unit" => $col['unit'],
-              "calorie" => $col['calorie']
+              "calorie" => $col['calorie'],
+              "protein" => $col['protein'],
+              "fat" => $col['fat'],
+              "carbohydrate" => $col['carbohydrate']
             )
           );
       }
