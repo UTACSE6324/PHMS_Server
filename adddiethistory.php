@@ -47,7 +47,7 @@
     $protein = $apiRes['foods'][0]['nf_protein'];
     $carbohydrate = $apiRes['foods'][0]['nf_total_carbohydrate'];
     
-    $pdo -> exec("update diethistory set fat=$fat, protein=$protein, carbohydrate=$carbohydrate
+    $pdo -> exec("update diethistory set apiId=$apiID, fat=$fat, protein=$protein, carbohydrate=$carbohydrate
                     where dietid=$dietid");
     
   }catch(Exception $e){}
