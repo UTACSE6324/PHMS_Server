@@ -48,7 +48,6 @@
     
     $pdo -> exec("update diethistory set apiId='$apiID', fat='$fat', protein='$protein', carbohydrate='$carbohydrate'
                     where dietid='$dietid'");
-    echo json_encode($pdo->errorInfo());
   }catch(Exception $e){
   }
 ?>
