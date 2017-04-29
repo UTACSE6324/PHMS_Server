@@ -50,6 +50,7 @@
     $pdo -> exec("update diethistory set apiId=$apiID, fat=$fat, protein=$protein, carbohydrate=$carbohydrate
                     where dietid=$dietid");
     
-  }catch(Exception $e){}
-  
+  }catch(Exception $e){
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }
 ?>
