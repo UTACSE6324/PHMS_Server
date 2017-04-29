@@ -41,19 +41,14 @@
     $url='https://trackapi.nutritionix.com/v2/search/item?x-app-key=8aa879546b2064de87ebc15334754bab&x-app-id=b871bf7e&nix_item_id='.$apiID;
     $apiRes = file_get_contents($url); 
     $apiRes = json_decode($apiRes, true);
-    
-    echo "\n".$apiRes."\n";
-    
+     
     $fat = $apiRes['foods'][0]['nf_total_fat'];
-    echo "\n".$fat."\n";
     $protein = $apiRes['foods'][0]['nf_protein'];
     $carbohydrate = $apiRes['foods'][0]['nf_total_carbohydrate'];
     
-    $pdo -> exec("update diethistory set apiId=$apiID, fat=$fat, protein=$protein, carbohydrate=$carbohydrate
-                    where dietid=$dietid");
-    
-  }catch(Exception $e){
+    $pdo -> exec("update diethistory set apiId='$apiID', fat='$fat', protein='$protein', carbohydrate='$carbohydrate'
+                    where dietid='$dietid'");
     echo json_encode($pdo->errorInfo());
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+  }catch(Exception $e){
   }
 ?>
