@@ -11,6 +11,9 @@
   $unit = $_GET['unit'];
   $calorie = $_GET['calorie'];
 
+  $name = str_replace("'","\'",$name);
+  $unit = str_replace("'","\'",$unit);
+
   $pdo = new PDO('mysql:host=localhost;dbname=phms','root','qgk112358'); 
   $res = $pdo -> query("select * from user where uid = '$uid' and token = '$token';") -> fetch();
   if(!empty($res)){
