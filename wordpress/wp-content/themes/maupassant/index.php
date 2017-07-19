@@ -10,11 +10,6 @@
 					<li><?php the_time('F j, Y'); ?></li>
 					<li class="comment-count"><a href="<?php the_permalink() ?>" rel="bookmark" title="进入<?php the_title();?>" >阅读全文</a></li>
 				</ul>
-				<div class="post-content">
-					<div class="entry">
-						<?php the_excerpt(); ?>
-					</div>
-				</div>
 			</article>
 		<?php endwhile; endif;?>
 		<?php pagenavi();?>
