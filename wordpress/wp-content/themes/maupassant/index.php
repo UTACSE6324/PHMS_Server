@@ -14,8 +14,8 @@
 					<div style="height:90px; overflow:hidden;">
 					<?php the_content(); ?>
 					</div>
-					<hr/>
 				</div>	
+				<hr/>
 			</article>
 		<?php endwhile; endif;?>
 		<?php pagenavi();?>
