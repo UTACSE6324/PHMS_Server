@@ -11,7 +11,7 @@
 					<li class="comment-count"><a href="<?php the_permalink() ?>" rel="bookmark" title="进入<?php the_title();?>" >阅读全文</a></li>
 				</ul>
 				<div class="post-content" >
-					<div style="height:90px; overflow:hidden;">
+					<div style="height:80px; overflow:hidden;">
 					<?php the_content(); ?>
 					</div>
 				</div>	
