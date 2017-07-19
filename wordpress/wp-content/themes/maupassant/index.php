@@ -15,6 +15,7 @@
 					<?php the_content(); ?>
 					</div>
 				</div>
+				</hr>	
 			</article>
 		<?php endwhile; endif;?>
 		<?php pagenavi();?>
