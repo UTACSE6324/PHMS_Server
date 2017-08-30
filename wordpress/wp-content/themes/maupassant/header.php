@@ -4,7 +4,10 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-    <?php ms_head(); wp_header();?>
+    <?php 
+    ms_head(); 
+    wp_head();
+    ?>
 </head>
 <body>
 <header id="header" class="clearfix">
